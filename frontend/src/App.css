@@ -1,0 +1,4 @@
+#root {
+  @apply min-h-screen bg-gray-100;
+  font-family: "Roboto", sans-serif;
+}
