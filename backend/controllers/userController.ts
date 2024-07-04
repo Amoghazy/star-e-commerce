@@ -48,6 +48,7 @@ const loginUser = asyncHandler(async (req: Request, res: Response) => {
     success: true,
     message: "Login Successfully",
     data: user._id,
+    isAdmin: user.isAdmin,
   });
 });
 const logoutUser = asyncHandler(async (req: Request, res: Response) => {
@@ -57,4 +58,12 @@ const logoutUser = asyncHandler(async (req: Request, res: Response) => {
     message: "Logout Successfully",
   });
 });
-export { createUsers, loginUser, logoutUser };
+const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
+  const users = await User.find().select("-password -__v");
+  res.status(200).json({
+    success: true,
+    message: "All Users",
+    data: users,
+  });
+});
+export { createUsers, loginUser, logoutUser, getAllUsers };
