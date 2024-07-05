@@ -42,7 +42,7 @@ const loginUser = asyncHandler(async (req: Request, res: Response) => {
   }
   const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) {
-    throw createError.createError(401, "Invalid Credentials", "Unauthorized");
+    throw createError.createError(401, "Wrong Email or Password", "Faield");
   }
   genratorToken(res, user._id);
   res.status(200).json({

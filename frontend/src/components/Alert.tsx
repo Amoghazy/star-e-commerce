@@ -1,8 +1,8 @@
-export default function Alert() {
+export default function Alert({ message }: { message: string }) {
   return (
     <div
       role="alert"
-      className="p-4 border-red-500 rounded border-s-4 bg-red-50"
+      className="p-4 my-2 border-red-500 rounded border-s-4 bg-red-50"
     >
       <div className="flex items-center gap-2 text-red-800">
         <svg
@@ -18,14 +18,8 @@ export default function Alert() {
           />
         </svg>
 
-        <strong className="block font-medium"> Something went wrong </strong>
+        <strong className="block font-medium">{message} </strong>
       </div>
-
-      <p className="mt-2 text-sm text-red-700">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo quasi
-        assumenda numquam deserunt consectetur autem nihil quos debitis dolor
-        culpa.
-      </p>
     </div>
   );
 }
