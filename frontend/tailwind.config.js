@@ -9,7 +9,7 @@ export default {
       colors: {
         primary: "#7dccfc",
 
-        secondry: "rgb(67 115 144)",
+        secondry: "#578EB0",
       },
     },
   },

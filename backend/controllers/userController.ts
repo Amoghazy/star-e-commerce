@@ -27,6 +27,7 @@ const createUsers = asyncHandler(async (req: Request, res: Response) => {
   });
 });
 const loginUser = asyncHandler(async (req: Request, res: Response) => {
+  console.log(req.body);
   const { email, password } = req.body;
   if (!email || !password) {
     throw createError.createError(
@@ -37,7 +38,7 @@ const loginUser = asyncHandler(async (req: Request, res: Response) => {
   }
   const user = await User.findOne({ email });
   if (!user) {
-    throw createError.createError(401, "Invalid Credentials", "Unauthorized");
+    throw createError.createError(401, "Wrong Email or Password", "Faield");
   }
   const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) {
@@ -47,8 +48,12 @@ const loginUser = asyncHandler(async (req: Request, res: Response) => {
   res.status(200).json({
     success: true,
     message: "Login Successfully",
-    data: user._id,
-    isAdmin: user.isAdmin,
+    data: {
+      _id: user._id,
+      username: user.username,
+      email: user.email,
+      isAdmin: user.isAdmin,
+    },
   });
 });
 const logoutUser = asyncHandler(async (req: Request, res: Response) => {
@@ -66,4 +71,110 @@ const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
     data: users,
   });
 });
-export { createUsers, loginUser, logoutUser, getAllUsers };
+const getCurrentUserProfile = asyncHandler(async (req: any, res: Response) => {
+  const user = await User.findById(req.user._id).select("-password -__v");
+  if (!user) {
+    throw createError.createError(404, "User Not Found", "Not Found");
+  }
+  res.status(200).json({
+    success: true,
+    message: "Current User",
+    data: user,
+  });
+});
+const updateCurrentUserProfile = asyncHandler(
+  async (req: any, res: Response) => {
+    const user = await User.findById(req.user._id).select(
+      "-password -__v -createdAt -updatedAt"
+    );
+    if (!user) {
+      throw createError.createError(404, "User Not Found", "Not Found");
+    }
+    const { username, email, password } = req.body;
+    if (username) {
+      user.username = username;
+    }
+    if (email) {
+      user.email = email;
+    }
+    if (password) {
+      user.password = await bcrypt.hash(password, 10);
+    }
+    if (req.user.isAdmin && req.body.isAdmin) {
+      user.isAdmin = req.body.isAdmin;
+    }
+    await user.save();
+    res.status(200).json({
+      success: true,
+      message: "Updated User",
+      data: user,
+    });
+  }
+);
+const deleteSpecificUser = asyncHandler(async (req: any, res: Response) => {
+  const user = await User.findById(req.params.id);
+  if (!user) {
+    throw createError.createError(404, "User Not Found", "Not Found");
+  }
+  if (user.isAdmin) {
+    throw createError.createError(403, "Not Allowed", "Forbidden");
+  }
+  await User.deleteOne({ _id: req.params.id });
+  res.status(200).json({
+    success: true,
+    message: "User Deleted Successfully",
+  });
+});
+
+const getUserById = asyncHandler(async (req: any, res: Response) => {
+  const user = await User.findById(req.params.id).select("-password -__v");
+  if (!user) {
+    throw createError.createError(404, "User Not Found", "Not Found");
+  }
+  res.status(200).json({
+    success: true,
+    message: "User Found",
+    data: user,
+  });
+});
+const updateUserById = asyncHandler(async (req: any, res: Response) => {
+  const user = await User.findById(req.params.id).select(
+    "-password -__v -createdAt "
+  );
+  if (!user) {
+    throw createError.createError(404, "User Not Found", "Not Found");
+  }
+  if (user.isAdmin) {
+    throw createError.createError(403, "Not Allowed", "Forbidden");
+  }
+  const { username, email, password, isAdmin } = req.body;
+  if (username) {
+    user.username = username;
+  }
+  if (email) {
+    user.email = email;
+  }
+  if (password) {
+    user.password = await bcrypt.hash(password, 10);
+  }
+  if (isAdmin) {
+    user.isAdmin = Boolean(isAdmin);
+  }
+  await user.save();
+  res.status(200).json({
+    success: true,
+    message: "User Updated Successfully",
+    data: user,
+  });
+});
+export {
+  createUsers,
+  loginUser,
+  logoutUser,
+  getAllUsers,
+  getCurrentUserProfile,
+  updateCurrentUserProfile,
+  deleteSpecificUser,
+  getUserById,
+  updateUserById,
+};

@@ -10,11 +10,17 @@ const authonticate = asyncHandler(
     if (token) {
       try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET!);
-        const user = await User.findById((decoded as any).id).select(
+
+        const user = await User.findById((decoded as any).userId).select(
           "-password -__v"
         );
+
         if (!user) {
-          throw createError.createError(401, "Invalid token", "Unauthorized");
+          throw createError.createError(
+            401,
+            "Invalid token user not found",
+            "Unauthorized"
+          );
         }
         req.user = user;
         next();
