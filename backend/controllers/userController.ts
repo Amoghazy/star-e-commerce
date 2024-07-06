@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs";
 import createError from "../utils/errorCreate";
 import genratorToken from "./../utils/genratorToken";
 const createUsers = asyncHandler(async (req: Request, res: Response) => {
-  const { username, email, password } = req.body;
+  const { username, email, password, confirmPassword } = req.body;
   if (!username || !email || !password) {
     throw createError.createError(
       400,
@@ -17,13 +17,21 @@ const createUsers = asyncHandler(async (req: Request, res: Response) => {
   if (userExists) {
     throw createError.createError(409, "User Already Exists", "Conflict");
   }
+  if (password !== confirmPassword) {
+    throw createError.createError(400, "Password Not Match", "Bad Request");
+  }
   const hasedPassword = await bcrypt.hash(password, 10);
   const user = await User.create({ username, email, password: hasedPassword });
   genratorToken(res, user._id);
   res.status(201).json({
     success: true,
     message: "User Created Successfully",
-    data: user._id,
+    data: {
+      _id: user._id,
+      username: user.username,
+      email: user.email,
+      isAdmin: user.isAdmin,
+    },
   });
 });
 const loginUser = asyncHandler(async (req: Request, res: Response) => {
@@ -90,7 +98,9 @@ const updateCurrentUserProfile = asyncHandler(
     if (!user) {
       throw createError.createError(404, "User Not Found", "Not Found");
     }
+
     const { username, email, password } = req.body;
+
     if (username) {
       user.username = username;
     }
@@ -104,6 +114,7 @@ const updateCurrentUserProfile = asyncHandler(
       user.isAdmin = req.body.isAdmin;
     }
     await user.save();
+
     res.status(200).json({
       success: true,
       message: "Updated User",

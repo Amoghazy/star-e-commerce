@@ -10,28 +10,46 @@ import {
 } from "react-icons/ai";
 import { FaHeart } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
-import { useLoginMutation } from "../../redux/api/userApiSlice";
+import { useLogoutMutation } from "../../redux/api/userApiSlice";
 import { logout } from "../../redux/slices/authSlice";
 import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
 import { TbLogout2 } from "react-icons/tb";
+import { toast } from "react-toastify";
 export default function Navigation() {
   const userInfo = useSelector((state: any) => state.auth.userInfo);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [dropDown, setDropDown] = useState<boolean>(false);
-  const [showSideBar, setShowSideBar] = useState<boolean>(false);
 
   const toggleDropDown = () => {
-    console.log("toggleDropDown");
     setDropDown(!dropDown);
   };
 
-  const toggleSideBar = () => {
-    setShowSideBar(!showSideBar);
+  const toggleSideBar = (entering: boolean) => {
+    if (!entering) {
+      setDropDown(false);
+    }
   };
 
+  const [logoutUser] = useLogoutMutation();
+  const handleLogout = async () => {
+    try {
+      setDropDown(false);
+      await logoutUser().unwrap();
+      dispatch(logout());
+      navigate("/login");
+      toast.info("Logout successful");
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong");
+    }
+  };
   return (
-    <div className="z-[999] hidden text-sm lg:flex xl:flex flex-col justify-between p-4 bg-black w-[4%] hover:w-[15%] h-screen fixed group transition-all duration-200 ease-in-out">
+    <div
+      className="z-[999] overflow-hidden hidden text-sm lg:flex xl:flex flex-col justify-between p-4 bg-black w-[4%] hover:w-[15%] h-screen fixed group transition-all duration-200 ease-in-out"
+      onMouseOver={() => toggleSideBar(true)}
+      onMouseLeave={() => toggleSideBar(false)}
+    >
       <div className="flex flex-col justify-between my-4">
         <Link
           to="/"
@@ -75,27 +93,28 @@ export default function Navigation() {
         <div className="inline-flex items-center ">
           {userInfo ? (
             <>
-              <span className="font-bold text-center text-white shadow-sm  shadow-zinc-400 group-hover:hidden">
-                {userInfo.username.slice(0, 1).toUpperCase()}
+              <span className="font-bold text-center text-white shadow-sm shadow-zinc-400 group-hover:hidden">
+                {userInfo?.username?.slice(0, 1)?.toUpperCase()}
               </span>
               <span className="hidden ml-1 mr-1 text-center text-white group-hover:block">
-                {userInfo.username}
+                {userInfo?.username}
               </span>
+              <button
+                onClick={toggleDropDown}
+                className={`h-full ${
+                  dropDown && "bg-slate-800"
+                } text-white rounded-md hover:bg-slate-800 hover:text-white`}
+              >
+                {dropDown ? (
+                  <RiArrowDropUpLine size={30} />
+                ) : (
+                  <RiArrowDropDownLine size={30} />
+                )}
+              </button>
             </>
           ) : (
             <></>
           )}
-
-          <button
-            onClick={toggleDropDown}
-            className="h-full text-white rounded-md hover:bg-gray-50 hover:text-gray-700"
-          >
-            {dropDown ? (
-              <RiArrowDropUpLine size={30} />
-            ) : (
-              <RiArrowDropDownLine size={30} />
-            )}
-          </button>
         </div>
 
         <div
@@ -110,7 +129,7 @@ export default function Navigation() {
             >
               Profile
             </Link>
-            {userInfo && userInfo.isAdmin && (
+            {userInfo && userInfo?.isAdmin && (
               <>
                 <Link
                   to={"/admin/dashboard"}
@@ -145,8 +164,8 @@ export default function Navigation() {
           <div className="p-2">
             <button
               type="submit"
+              onClick={handleLogout}
               className="flex items-center w-full gap-2 px-4 py-2 text-sm text-red-700 rounded-lg hover:bg-red-50"
-              role="menuitem"
             >
               <TbLogout2 size={20} />
               Log out
