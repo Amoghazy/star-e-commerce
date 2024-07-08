@@ -152,6 +152,12 @@ export default function Navigation() {
                   Products
                 </Link>
                 <Link
+                  to={"/admin/category-list"}
+                  className="block px-4 py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
+                >
+                  Categories
+                </Link>
+                <Link
                   to={"/admin/orders"}
                   className="block px-4 py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
                 >

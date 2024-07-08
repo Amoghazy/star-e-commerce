@@ -8,6 +8,7 @@ import Profile from "./pages/User/Profile";
 import GardAdmin from "./gards/GardAdmin";
 import UsersList from "./pages/Admin/UsersList";
 import GardUser from "./gards/GardUser";
+import CategoryList from "./pages/Admin/CategoryList";
 
 const router = createBrowserRouter([
   {
@@ -41,13 +42,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/admin",
-        element: <Layout />,
+
         children: [
           {
             path: "users-list",
             element: (
               <GardAdmin>
                 <UsersList />
+              </GardAdmin>
+            ),
+          },
+          {
+            path: "category-list",
+            element: (
+              <GardAdmin>
+                <CategoryList />
               </GardAdmin>
             ),
           },
