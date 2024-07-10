@@ -9,6 +9,9 @@ import GardAdmin from "./gards/GardAdmin";
 import UsersList from "./pages/Admin/UsersList";
 import GardUser from "./gards/GardUser";
 import CategoryList from "./pages/Admin/CategoryList";
+import ProductList from "./pages/Admin/ProductList";
+import ProductUpdate from "./pages/Admin/ProductUpdate";
+import AllProducts from "./pages/Admin/AllProducts";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +60,30 @@ const router = createBrowserRouter([
             element: (
               <GardAdmin>
                 <CategoryList />
+              </GardAdmin>
+            ),
+          },
+          {
+            path: "products-list",
+            element: (
+              <GardAdmin>
+                <ProductList />
+              </GardAdmin>
+            ),
+          },
+          {
+            path: "allproducts",
+            element: (
+              <GardAdmin>
+                <AllProducts />
+              </GardAdmin>
+            ),
+          },
+          {
+            path: "product/update/:id",
+            element: (
+              <GardAdmin>
+                <ProductUpdate />
               </GardAdmin>
             ),
           },

@@ -1,4 +1,5 @@
-export default function Alert({ message }: { message: string }) {
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export default function Alert({ message }: { message: any }) {
   return (
     <div
       role="alert"
