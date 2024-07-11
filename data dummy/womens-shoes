@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Black & Brown Slipper",
+    "description": "The Black & Brown Slipper is a comfortable and stylish choice for casual wear. Featuring a blend of black and brown colors, it adds a touch of sophistication to your relaxation.",
+    "price": 19.99,
+    "rating": 4.13,
+    "category": "668f885ffb73530d5010977c",
+    "brand": "Comfort Trends",
+    "countInStock": 80,
+    "images": "https://cdn.dummyjson.com/products/images/womens-shoes/Black%20&%20Brown%20Slipper/1.png"
+  },
+  {
+    "name": "Calvin Klein Heel Shoes",
+    "description": "Calvin Klein Heel Shoes are elegant and sophisticated, designed for formal occasions. With a classic design and high-quality materials, they complement your stylish ensemble.",
+    "price": 79.99,
+    "rating": 4.06,
+    "category": "668f885ffb73530d5010977c",
+    "brand": "Calvin Klein",
+    "countInStock": 99,
+    "images": "https://cdn.dummyjson.com/products/images/womens-shoes/Calvin%20Klein%20Heel%20Shoes/1.png"
+  },
+  {
+    "name": "Golden Shoes Woman",
+    "description": "The Golden Shoes for Women are a glamorous choice for special occasions. Featuring a golden hue and stylish design, they add a touch of luxury to your outfit.",
+    "price": 49.99,
+    "rating": 4.82,
+    "category": "668f885ffb73530d5010977c",
+    "brand": "Fashion Diva",
+    "countInStock": 99,
+    "images": "https://cdn.dummyjson.com/products/images/womens-shoes/Golden%20Shoes%20Woman/1.png"
+  },
+  {
+    "name": "Pampi Shoes",
+    "description": "Pampi Shoes offer a blend of comfort and style for everyday use. With a versatile design, they are suitable for various casual occasions, providing a trendy and relaxed look.",
+    "price": 29.99,
+    "rating": 3.01,
+    "category": "668f885ffb73530d5010977c",
+    "brand": "Pampi",
+    "countInStock": 36,
+    "images": "https://cdn.dummyjson.com/products/images/womens-shoes/Pampi%20Shoes/1.png"
+  },
+  {
+    "name": "Red Shoes",
+    "description": "The Red Shoes make a bold statement with their vibrant red color. Whether for a party or a casual outing, these shoes add a pop of color and style to your wardrobe.",
+    "price": 34.99,
+    "rating": 4.23,
+    "category": "668f885ffb73530d5010977c",
+    "brand": "Fashion Express",
+    "countInStock": 53,
+    "images": "https://cdn.dummyjson.com/products/images/womens-shoes/Red%20Shoes/1.png"
+  }
+]

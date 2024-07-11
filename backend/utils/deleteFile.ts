@@ -1,11 +1,16 @@
 import fs from "fs";
 import createError from "../utils/errorCreate";
-const deleteFile = (filePath) => {
+const deleteFile = (filePath: string) => {
   try {
     fs.unlinkSync(filePath);
     console.log("File is deleted.");
   } catch (err) {
-    createError.createError(500, "Failed", err.message);
+    const error = err as Error;
+    createError.createError(
+      500,
+      "Failed",
+      error.message || "Internal Server Error for deleting file"
+    );
   }
 };
 export default deleteFile;

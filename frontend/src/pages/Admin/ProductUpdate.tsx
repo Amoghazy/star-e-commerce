@@ -377,7 +377,11 @@ export default function ProductUpdate() {
           <div className="w-10/12 p-4 bg-white border border-blue-100 shadow-lg min-h-48 lg:min-h-96 rounded-2xl sm:p-6 lg:p-8">
             {imagePtrview ? (
               <img
-                src={"/" + values.image}
+                src={
+                  values.image?.startsWith("https")
+                    ? values.image
+                    : `/${values.image}`
+                }
                 alt=""
                 className="object-cover w-full h-full rounded-2xl"
               />

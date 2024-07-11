@@ -1,0 +1,155 @@
+[
+  {
+    "name": "American Football",
+    "description": "The American Football is a classic ball used in American football games. It is designed for throwing and catching, making it an essential piece of equipment for the sport.",
+    "price": 19.99,
+    "rating": 3.78,
+    "category": "668f885ffb73530d50109778",
+    "countInStock": 48,
+    "images": "https://cdn.dummyjson.com/products/images/sports-accessories/American%20Football/1.png"
+  },
+  {
+    "name": "Baseball Ball",
+    "description": "The Baseball Ball is a standard baseball used in baseball games. It features a durable leather cover and is designed for pitching, hitting, and fielding in the game of baseball.",
+    "price": 8.99,
+    "rating": 4.76,
+    "category": "668f885ffb73530d50109778",
+    "countInStock": 71,
+    "images": "https://cdn.dummyjson.com/products/images/sports-accessories/Baseball%20Ball/1.png"
+  },
+  {
+    "name": "Baseball Glove",
+    "description": "The Baseball Glove is a protective glove worn by baseball players. It is designed to catch and field the baseball, providing players with comfort and control during the game.",
+    "price": 24.99,
+    "rating": 2.72,
+    "category": "668f885ffb73530d50109778",
+    "countInStock": 43,
+    "images": "https://cdn.dummyjson.com/products/images/sports-accessories/Baseball%20Glove/1.png"
+  },
+  {
+    "name": "Basketball",
+    "description": "The Basketball is a standard ball used in basketball games. It is designed for dribbling, shooting, and passing in the game of basketball, suitable for both indoor and outdoor play.",
+    "price": 14.99,
+    "rating": 4.15,
+    "category": "668f885ffb73530d50109778",
+    "countInStock": 100,
+    "images": "https://cdn.dummyjson.com/products/images/sports-accessories/Basketball/1.png"
+  },
+  {
+    "name": "Basketball Rim",
+    "description": "The Basketball Rim is a sturdy hoop and net assembly mounted on a basketball backboard. It provides a target for shooting and scoring in the game of basketball.",
+    "price": 39.99,
+    "rating": 4.98,
+    "category": "668f885ffb73530d50109778",
+    "countInStock": 57,
+    "images": "https://cdn.dummyjson.com/products/images/sports-accessories/Basketball%20Rim/1.png"
+  },
+  {
+    "name": "Cricket Ball",
+    "description": "The Cricket Ball is a hard leather ball used in the sport of cricket. It is bowled and batted in the game, and its hardness and seam contribute to the dynamics of cricket play.",
+    "price": 12.99,
+    "rating": 4.43,
+    "category": "668f885ffb73530d50109778",
+    "countInStock": 42,
+    "images": "https://cdn.dummyjson.com/products/images/sports-accessories/Cricket%20Ball/1.png"
+  },
+  {
+    "name": "Cricket Bat",
+    "description": "The Cricket Bat is an essential piece of cricket equipment used by batsmen to hit the cricket ball. It is made of wood and comes in various sizes and designs.",
+    "price": 29.99,
+    "rating": 3.07,
+    "category": "668f885ffb73530d50109778",
+    "countInStock": 3,
+    "images": "https://cdn.dummyjson.com/products/images/sports-accessories/Cricket%20Bat/1.png"
+  },
+  {
+    "name": "Cricket Helmet",
+    "description": "The Cricket Helmet is a protective headgear worn by cricket players, especially batsmen and wicketkeepers. It provides protection against fast bowling and bouncers.",
+    "price": 44.99,
+    "rating": 3.34,
+    "category": "668f885ffb73530d50109778",
+    "countInStock": 31,
+    "images": "https://cdn.dummyjson.com/products/images/sports-accessories/Cricket%20Helmet/1.png"
+  },
+  {
+    "name": "Cricket Wicket",
+    "description": "The Cricket Wicket is a set of three stumps and two bails, forming a wicket used in the sport of cricket. Batsmen aim to protect the wicket while scoring runs.",
+    "price": 29.99,
+    "rating": 4.16,
+    "category": "668f885ffb73530d50109778",
+    "countInStock": 31,
+    "images": "https://cdn.dummyjson.com/products/images/sports-accessories/Cricket%20Wicket/1.png"
+  },
+  {
+    "name": "Feather Shuttlecock",
+    "description": "The Feather Shuttlecock is used in the sport of badminton. It features natural feathers and is designed for high-speed play, providing stability and accuracy during matches.",
+    "price": 5.99,
+    "rating": 3.95,
+    "category": "668f885ffb73530d50109778",
+    "countInStock": 17,
+    "images": "https://cdn.dummyjson.com/products/images/sports-accessories/Feather%20Shuttlecock/1.png"
+  },
+  {
+    "name": "Football",
+    "description": "The Football, also known as a soccer ball, is the standard ball used in the sport of football (soccer). It is designed for kicking and passing in the game.",
+    "price": 17.99,
+    "rating": 3.94,
+    "category": "668f885ffb73530d50109778",
+    "countInStock": 66,
+    "images": "https://cdn.dummyjson.com/products/images/sports-accessories/Football/1.png"
+  },
+  {
+    "name": "Golf Ball",
+    "description": "The Golf Ball is a small ball used in the sport of golf. It features dimples on its surface, providing aerodynamic lift and distance when struck by a golf club.",
+    "price": 9.99,
+    "rating": 4.84,
+    "category": "668f885ffb73530d50109778",
+    "countInStock": 45,
+    "images": "https://cdn.dummyjson.com/products/images/sports-accessories/Golf%20Ball/1.png"
+  },
+  {
+    "name": "Iron Golf",
+    "description": "The Iron Golf is a type of golf club designed for various golf shots. It features a solid metal head and is used for approach shots, chipping, and other golfing techniques.",
+    "price": 49.99,
+    "rating": 4.87,
+    "category": "668f885ffb73530d50109778",
+    "countInStock": 7,
+    "images": "https://cdn.dummyjson.com/products/images/sports-accessories/Iron%20Golf/1.png"
+  },
+  {
+    "name": "Metal Baseball Bat",
+    "description": "The Metal Baseball Bat is a durable and lightweight baseball bat made from metal alloys. It is commonly used in baseball games for hitting and batting practice.",
+    "price": 29.99,
+    "rating": 4.11,
+    "category": "668f885ffb73530d50109778",
+    "countInStock": 37,
+    "images": "https://cdn.dummyjson.com/products/images/sports-accessories/Metal%20Baseball%20Bat/1.png"
+  },
+  {
+    "name": "Tennis Ball",
+    "description": "The Tennis Ball is a standard ball used in the sport of tennis. It is designed for bouncing and hitting with tennis rackets during matches or practice sessions.",
+    "price": 6.99,
+    "rating": 4.77,
+    "category": "668f885ffb73530d50109778",
+    "countInStock": 99,
+    "images": "https://cdn.dummyjson.com/products/images/sports-accessories/Tennis%20Ball/1.png"
+  },
+  {
+    "name": "Tennis Racket",
+    "description": "The Tennis Racket is an essential piece of equipment used in the sport of tennis. It features a frame with strings and a grip, allowing players to hit the tennis ball.",
+    "price": 49.99,
+    "rating": 3.82,
+    "category": "668f885ffb73530d50109778",
+    "countInStock": 86,
+    "images": "https://cdn.dummyjson.com/products/images/sports-accessories/Tennis%20Racket/1.png"
+  },
+  {
+    "name": "Volleyball",
+    "description": "The Volleyball is a standard ball used in the sport of volleyball. It is designed for passing, setting, and spiking over the net during volleyball matches.",
+    "price": 11.99,
+    "rating": 4.08,
+    "category": "668f885ffb73530d50109778",
+    "countInStock": 0,
+    "images": "https://cdn.dummyjson.com/products/images/sports-accessories/Volleyball/1.png"
+  }
+]

@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import asyncHandler from "../middlewares/asyancHandelr";
 import Product from "../models/productModel";
 import createError from "../utils/errorCreate";
+import deleteFile from "./../utils/deleteFile";
 const createProduct = asyncHandler(async (req: Request, res: Response) => {
   req.body.image = req.file?.path
     ? req.file?.path.replace(/\\/g, "/")
@@ -38,7 +39,12 @@ const createProduct = asyncHandler(async (req: Request, res: Response) => {
 
 const deleteProduct = asyncHandler(async (req: Request, res: Response) => {
   const { id } = req.params;
+  
   const product = await Product.findByIdAndDelete(id);
+
+  if (product) {
+    deleteFile(product.image);
+  }
 
   res.status(200).json({
     success: true,

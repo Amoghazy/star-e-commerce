@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Decoration Swing",
+    "description": "The Decoration Swing is a charming addition to your home decor. Crafted with intricate details, it adds a touch of elegance and whimsy to any room.",
+    "price": 59.99,
+    "rating": 3.56,
+    "category": "668f885ffb73530d50109770",
+    "countInStock": 62,
+    "images": "https://cdn.dummyjson.com/products/images/home-decoration/Decoration%20Swing/1.png"
+  },
+  {
+    "name": "Family Tree Photo Frame",
+    "description": "The Family Tree Photo Frame is a sentimental and stylish way to display your cherished family memories. With multiple photo slots, it tells the story of your loved ones.",
+    "price": 29.99,
+    "rating": 3.84,
+    "category": "668f885ffb73530d50109770",
+    "countInStock": 34,
+    "images": "https://cdn.dummyjson.com/products/images/home-decoration/Family%20Tree%20Photo%20Frame/1.png"
+  },
+  {
+    "name": "House Showpiece Plant",
+    "description": "The House Showpiece Plant is an artificial plant that brings a touch of nature to your home without the need for maintenance. It adds greenery and style to any space.",
+    "price": 39.99,
+    "rating": 3.61,
+    "category": "668f885ffb73530d50109770",
+    "countInStock": 89,
+    "images": "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/1.png"
+  },
+  {
+    "name": "Plant Pot",
+    "description": "The Plant Pot is a stylish container for your favorite plants. With a sleek design, it complements your indoor or outdoor garden, adding a modern touch to your plant display.",
+    "price": 14.99,
+    "rating": 3.33,
+    "category": "668f885ffb73530d50109770",
+    "countInStock": 70,
+    "images": "https://cdn.dummyjson.com/products/images/home-decoration/Plant%20Pot/1.png"
+  },
+  {
+    "name": "Table Lamp",
+    "description": "The Table Lamp is a functional and decorative lighting solution for your living space. With a modern design, it provides both ambient and task lighting, enhancing the atmosphere.",
+    "price": 49.99,
+    "rating": 4.56,
+    "category": "668f885ffb73530d50109770",
+    "countInStock": 84,
+    "images": "https://cdn.dummyjson.com/products/images/home-decoration/Table%20Lamp/1.png"
+  }
+]

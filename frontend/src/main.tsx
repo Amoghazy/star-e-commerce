@@ -8,9 +8,10 @@ import store from "./redux/store.ts";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <>
-    <Provider store={store}>
+    <Provider store={store} >
       <ToastContainer />
       <App />
+        
     </Provider>
   </>
 );

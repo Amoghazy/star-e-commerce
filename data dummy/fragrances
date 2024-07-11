@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Calvin Klein CK One",
+    "description": "CK One by Calvin Klein is a classic unisex fragrance, known for its fresh and clean scent. It's a versatile fragrance suitable for everyday wear.",
+    "price": 49.99,
+    "rating": 4.85,
+    "category": "668f885ffb73530d5010976d",
+    "brand": "Calvin Klein",
+    "countInStock": 17,
+    "images": "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/1.png"
+  },
+  {
+    "name": "Chanel Coco Noir Eau De",
+    "description": "Coco Noir by Chanel is an elegant and mysterious fragrance, featuring notes of grapefruit, rose, and sandalwood. Perfect for evening occasions.",
+    "price": 129.99,
+    "rating": 2.76,
+    "category": "668f885ffb73530d5010976d",
+    "brand": "Chanel",
+    "countInStock": 41,
+    "images": "https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/1.png"
+  },
+  {
+    "name": "Dior J'adore",
+    "description": "J'adore by Dior is a luxurious and floral fragrance, known for its blend of ylang-ylang, rose, and jasmine. It embodies femininity and sophistication.",
+    "price": 89.99,
+    "rating": 3.31,
+    "category": "668f885ffb73530d5010976d",
+    "brand": "Dior",
+    "countInStock": 91,
+    "images": "https://cdn.dummyjson.com/products/images/fragrances/Dior%20J'adore/1.png"
+  },
+  {
+    "name": "Dolce Shine Eau de",
+    "description": "Dolce Shine by Dolce & Gabbana is a vibrant and fruity fragrance, featuring notes of mango, jasmine, and blonde woods. It's a joyful and youthful scent.",
+    "price": 69.99,
+    "rating": 2.68,
+    "category": "668f885ffb73530d5010976d",
+    "brand": "Dolce & Gabbana",
+    "countInStock": 3,
+    "images": "https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/1.png"
+  },
+  {
+    "name": "Gucci Bloom Eau de",
+    "description": "Gucci Bloom by Gucci is a floral and captivating fragrance, with notes of tuberose, jasmine, and Rangoon creeper. It's a modern and romantic scent.",
+    "price": 79.99,
+    "rating": 2.69,
+    "category": "668f885ffb73530d5010976d",
+    "brand": "Gucci",
+    "countInStock": 93,
+    "images": "https://cdn.dummyjson.com/products/images/fragrances/Gucci%20Bloom%20Eau%20de/1.png"
+  }
+]

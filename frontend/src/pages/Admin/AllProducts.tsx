@@ -5,11 +5,27 @@ import momment from "moment";
 import { FaArrowRight } from "react-icons/fa";
 import AdminMenu from "./AdminMenu";
 import Pagenation from "../../components/Pagenation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Loader from "../../components/Loader";
+import { getImage } from "../../cashImage";
 export default function AllProducts() {
   const [cuurentPage, setCurrentpage] = useState(1);
   const { data: allProducts, isLoading } = useGetAllProductsQuery(cuurentPage);
+  const [images, setImages] = useState<any>({});
+  useEffect(() => {
+    if (allProducts && allProducts.data) {
+      allProducts.data.forEach((product: any) => {
+        getImage(product.image).then((cachedImage) => {
+          if (cachedImage) {
+            setImages((prev: any) => ({
+              ...prev,
+              [product.image]: URL.createObjectURL(cachedImage.blob),
+            }));
+          }
+        });
+      });
+    }
+  }, [allProducts]);
   if (isLoading) {
     return (
       <section className="flex items-center justify-center w-screen h-screen">
@@ -34,7 +50,13 @@ export default function AllProducts() {
                 >
                   <div className="flex">
                     <img
-                      src={"/" + product?.image}
+                      loading="lazy"
+                      src={
+                        images[product.image] ||
+                        product?.image?.startsWith("https")
+                          ? product?.image
+                          : `/${product?.image}`
+                      }
                       alt={product?.name}
                       className="object-cover w-36 h-36"
                     />
@@ -42,8 +64,8 @@ export default function AllProducts() {
                     <div className="flex flex-col p-4">
                       <div className="flex items-center justify-between ">
                         {" "}
-                        <h5 className="mb-2 text-xl font-semibold">
-                          {product?.name}
+                        <h5 className="w-5/12 mb-2 text-xl font-semibold text-ellipsis line-clamp-1">
+                          {product?.name?.substring(0, 25)}
                         </h5>
                         <p className="text-sm text-gray-500">
                           {" "}

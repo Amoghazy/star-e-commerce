@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Nike Air Jordan 1 Red And Black",
+    "description": "The Nike Air Jordan 1 in Red and Black is an iconic basketball sneaker known for its stylish design and high-performance features, making it a favorite among sneaker enthusiasts and athletes.",
+    "price": 149.99,
+    "rating": 2.77,
+    "category": "668f885ffb73530d50109774",
+    "brand": "Nike",
+    "countInStock": 15,
+    "images": "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Air%20Jordan%201%20Red%20And%20Black/1.png"
+  },
+  {
+    "name": "Nike Baseball Cleats",
+    "description": "Nike Baseball Cleats are designed for maximum traction and performance on the baseball field. They provide stability and support for players during games and practices.",
+    "price": 79.99,
+    "rating": 4.01,
+    "category": "668f885ffb73530d50109774",
+    "brand": "Nike",
+    "countInStock": 14,
+    "images": "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Baseball%20Cleats/1.png"
+  },
+  {
+    "name": "Puma Future Rider Trainers",
+    "description": "The Puma Future Rider Trainers offer a blend of retro style and modern comfort. Perfect for casual wear, these trainers provide a fashionable and comfortable option for everyday use.",
+    "price": 89.99,
+    "rating": 4.85,
+    "category": "668f885ffb73530d50109774",
+    "brand": "Puma",
+    "countInStock": 10,
+    "images": "https://cdn.dummyjson.com/products/images/mens-shoes/Puma%20Future%20Rider%20Trainers/1.png"
+  },
+  {
+    "name": "Sports Sneakers Off White & Red",
+    "description": "The Sports Sneakers in Off White and Red combine style and functionality, making them a fashionable choice for sports enthusiasts. The red and off-white color combination adds a bold and energetic touch.",
+    "price": 119.99,
+    "rating": 4.92,
+    "category": "668f885ffb73530d50109774",
+    "brand": "Off White",
+    "countInStock": 73,
+    "images": "https://cdn.dummyjson.com/products/images/mens-shoes/Sports%20Sneakers%20Off%20White%20&%20Red/1.png"
+  },
+  {
+    "name": "Sports Sneakers Off White Red",
+    "description": "Another variant of the Sports Sneakers in Off White Red, featuring a unique design. These sneakers offer style and comfort for casual occasions.",
+    "price": 109.99,
+    "rating": 2.95,
+    "category": "668f885ffb73530d50109774",
+    "brand": "Off White",
+    "countInStock": 75,
+    "images": "https://cdn.dummyjson.com/products/images/mens-shoes/Sports%20Sneakers%20Off%20White%20Red/1.png"
+  }
+]

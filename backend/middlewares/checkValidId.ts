@@ -3,6 +3,7 @@ import { isValidObjectId } from "mongoose";
 import createError from "../utils/errorCreate";
 const checkValidId = (req: Request, res: Response, next: NextFunction) => {
   const { id } = req.params;
+  console.log(id)
   const validId = isValidObjectId(id);
   if (!validId) {
     next(createError.createError(400, "Invalid Id", "Bad Request"));

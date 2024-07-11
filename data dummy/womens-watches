@@ -1,0 +1,52 @@
+[
+  {
+    "name": "IWC Ingenieur Automatic Steel",
+    "description": "The IWC Ingenieur Automatic Steel watch is a durable and sophisticated timepiece. With a stainless steel case and automatic movement, it combines precision and style for watch enthusiasts.",
+    "price": 4999.99,
+    "rating": 2.58,
+    "category": "668f885ffb73530d5010977d",
+    "brand": "IWC",
+    "countInStock": 85,
+    "images": "https://cdn.dummyjson.com/products/images/womens-watches/IWC%20Ingenieur%20Automatic%20Steel/1.png"
+  },
+  {
+    "name": "Rolex Cellini Moonphase",
+    "description": "The Rolex Cellini Moonphase watch is a masterpiece of horology. Featuring a moon phase complication, it showcases the craftsmanship and elegance that Rolex is renowned for.",
+    "price": 15999.99,
+    "rating": 3.41,
+    "category": "668f885ffb73530d5010977d",
+    "brand": "Rolex",
+    "countInStock": 66,
+    "images": "https://cdn.dummyjson.com/products/images/womens-watches/Rolex%20Cellini%20Moonphase/1.png"
+  },
+  {
+    "name": "Rolex Datejust Women",
+    "description": "The Rolex Datejust Women's watch is an iconic timepiece designed for women. With a timeless design and a date complication, it offers both elegance and functionality.",
+    "price": 10999.99,
+    "rating": 3.53,
+    "category": "668f885ffb73530d5010977d",
+    "brand": "Rolex",
+    "countInStock": 31,
+    "images": "https://cdn.dummyjson.com/products/images/womens-watches/Rolex%20Datejust%20Women/1.png"
+  },
+  {
+    "name": "Watch Gold for Women",
+    "description": "The Gold Women's Watch is a stunning accessory that combines luxury and style. Featuring a gold-plated case and a chic design, it adds a touch of glamour to any outfit.",
+    "price": 799.99,
+    "rating": 3.03,
+    "category": "668f885ffb73530d5010977d",
+    "brand": "Fashion Gold",
+    "countInStock": 94,
+    "images": "https://cdn.dummyjson.com/products/images/womens-watches/Watch%20Gold%20for%20Women/1.png"
+  },
+  {
+    "name": "Women's Wrist Watch",
+    "description": "The Women's Wrist Watch is a versatile and fashionable timepiece for everyday wear. With a comfortable strap and a simple yet elegant design, it complements various styles.",
+    "price": 129.99,
+    "rating": 2.93,
+    "category": "668f885ffb73530d5010977d",
+    "brand": "Fashion Co.",
+    "countInStock": 55,
+    "images": "https://cdn.dummyjson.com/products/images/womens-watches/Women's%20Wrist%20Watch/1.png"
+  }
+]

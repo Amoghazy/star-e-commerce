@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Green Crystal Earring",
+    "description": "The Green Crystal Earring is a dazzling accessory that features a vibrant green crystal. With a classic design, it adds a touch of elegance to your ensemble, perfect for formal or special occasions.",
+    "price": 29.99,
+    "rating": 2.94,
+    "category": "668f885ffb73530d5010977b",
+    "countInStock": 1,
+    "images": "https://cdn.dummyjson.com/products/images/womens-jewellery/Green%20Crystal%20Earring/1.png"
+  },
+  {
+    "name": "Green Oval Earring",
+    "description": "The Green Oval Earring is a stylish and versatile accessory with a unique oval shape. Whether for casual or dressy occasions, its green hue and contemporary design make it a standout piece.",
+    "price": 24.99,
+    "rating": 2.54,
+    "category": "668f885ffb73530d5010977b",
+    "countInStock": 89,
+    "images": "https://cdn.dummyjson.com/products/images/womens-jewellery/Green%20Oval%20Earring/1.png"
+  },
+  {
+    "name": "Tropical Earring",
+    "description": "The Tropical Earring is a fun and playful accessory inspired by tropical elements. Featuring vibrant colors and a lively design, it's perfect for adding a touch of summer to your look.",
+    "price": 19.99,
+    "rating": 3.32,
+    "category": "668f885ffb73530d5010977b",
+    "countInStock": 76,
+    "images": "https://cdn.dummyjson.com/products/images/womens-jewellery/Tropical%20Earring/1.png"
+  }
+]

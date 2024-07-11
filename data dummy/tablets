@@ -1,0 +1,32 @@
+[
+  {
+    "name": "iPad Mini 2021 Starlight",
+    "description": "The iPad Mini 2021 in Starlight is a compact and powerful tablet from Apple. Featuring a stunning Retina display, powerful A-series chip, and a sleek design, it offers a premium tablet experience.",
+    "price": 499.99,
+    "rating": 3.87,
+    "category": "668f885ffb73530d5010977a",
+    "brand": "Apple",
+    "countInStock": 32,
+    "images": "https://cdn.dummyjson.com/products/images/tablets/iPad%20Mini%202021%20Starlight/1.png"
+  },
+  {
+    "name": "Samsung Galaxy Tab S8 Plus Grey",
+    "description": "The Samsung Galaxy Tab S8 Plus in Grey is a high-performance Android tablet by Samsung. With a large AMOLED display, powerful processor, and S Pen support, it's ideal for productivity and entertainment.",
+    "price": 599.99,
+    "rating": 3.43,
+    "category": "668f885ffb73530d5010977a",
+    "brand": "Samsung",
+    "countInStock": 76,
+    "images": "https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20S8%20Plus%20Grey/1.png"
+  },
+  {
+    "name": "Samsung Galaxy Tab White",
+    "description": "The Samsung Galaxy Tab in White is a sleek and versatile Android tablet. With a vibrant display, long-lasting battery, and a range of features, it offers a great user experience for various tasks.",
+    "price": 349.99,
+    "rating": 3.7,
+    "category": "668f885ffb73530d5010977a",
+    "brand": "Samsung",
+    "countInStock": 0,
+    "images": "https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20White/1.png"
+  }
+]

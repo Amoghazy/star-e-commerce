@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Blue & Black Check Shirt",
+    "description": "The Blue & Black Check Shirt is a stylish and comfortable men's shirt featuring a classic check pattern. Made from high-quality fabric, it's suitable for both casual and semi-formal occasions.",
+    "price": 29.99,
+    "rating": 4.19,
+    "category": "668f885ffb73530d50109773",
+    "brand": "Fashion Trends",
+    "countInStock": 44,
+    "images": "https://cdn.dummyjson.com/products/images/mens-shirts/Blue%20&%20Black%20Check%20Shirt/1.png"
+  },
+  {
+    "name": "Gigabyte Aorus Men Tshirt",
+    "description": "The Gigabyte Aorus Men Tshirt is a cool and casual shirt for gaming enthusiasts. With the Aorus logo and sleek design, it's perfect for expressing your gaming style.",
+    "price": 24.99,
+    "rating": 4.95,
+    "category": "668f885ffb73530d50109773",
+    "brand": "Gigabyte",
+    "countInStock": 64,
+    "images": "https://cdn.dummyjson.com/products/images/mens-shirts/Gigabyte%20Aorus%20Men%20Tshirt/1.png"
+  },
+  {
+    "name": "Man Plaid Shirt",
+    "description": "The Man Plaid Shirt is a timeless and versatile men's shirt with a classic plaid pattern. Its comfortable fit and casual style make it a wardrobe essential for various occasions.",
+    "price": 34.99,
+    "rating": 3.66,
+    "category": "668f885ffb73530d50109773",
+    "brand": "Classic Wear",
+    "countInStock": 65,
+    "images": "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Plaid%20Shirt/1.png"
+  },
+  {
+    "name": "Man Short Sleeve Shirt",
+    "description": "The Man Short Sleeve Shirt is a breezy and stylish option for warm days. With a comfortable fit and short sleeves, it's perfect for a laid-back yet polished look.",
+    "price": 19.99,
+    "rating": 4.62,
+    "category": "668f885ffb73530d50109773",
+    "brand": "Casual Comfort",
+    "countInStock": 20,
+    "images": "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Short%20Sleeve%20Shirt/1.png"
+  },
+  {
+    "name": "Men Check Shirt",
+    "description": "The Men Check Shirt is a classic and versatile shirt featuring a stylish check pattern. Suitable for various occasions, it adds a smart and polished touch to your wardrobe.",
+    "price": 27.99,
+    "rating": 2.9,
+    "category": "668f885ffb73530d50109773",
+    "brand": "Urban Chic",
+    "countInStock": 69,
+    "images": "https://cdn.dummyjson.com/products/images/mens-shirts/Men%20Check%20Shirt/1.png"
+  }
+]

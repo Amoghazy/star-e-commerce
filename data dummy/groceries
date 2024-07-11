@@ -1,0 +1,245 @@
+[
+  {
+    "name": "Apple",
+    "description": "Fresh and crisp apples, perfect for snacking or incorporating into various recipes.",
+    "price": 1.99,
+    "rating": 2.96,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 9,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Apple/1.png"
+  },
+  {
+    "name": "Beef Steak",
+    "description": "High-quality beef steak, great for grilling or cooking to your preferred level of doneness.",
+    "price": 12.99,
+    "rating": 2.83,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 96,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Beef%20Steak/1.png"
+  },
+  {
+    "name": "Cat Food",
+    "description": "Nutritious cat food formulated to meet the dietary needs of your feline friend.",
+    "price": 8.99,
+    "rating": 2.88,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 13,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Cat%20Food/1.png"
+  },
+  {
+    "name": "Chicken Meat",
+    "description": "Fresh and tender chicken meat, suitable for various culinary preparations.",
+    "price": 9.99,
+    "rating": 4.61,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 69,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Chicken%20Meat/1.png"
+  },
+  {
+    "name": "Cooking Oil",
+    "description": "Versatile cooking oil suitable for frying, sautéing, and various culinary applications.",
+    "price": 4.99,
+    "rating": 4.01,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 22,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Cooking%20Oil/1.png"
+  },
+  {
+    "name": "Cucumber",
+    "description": "Crisp and hydrating cucumbers, ideal for salads, snacks, or as a refreshing side.",
+    "price": 1.49,
+    "rating": 4.71,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 22,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Cucumber/1.png"
+  },
+  {
+    "name": "Dog Food",
+    "description": "Specially formulated dog food designed to provide essential nutrients for your canine companion.",
+    "price": 10.99,
+    "rating": 2.74,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 40,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Dog%20Food/1.png"
+  },
+  {
+    "name": "Eggs",
+    "description": "Fresh eggs, a versatile ingredient for baking, cooking, or breakfast.",
+    "price": 2.99,
+    "rating": 4.46,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 10,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Eggs/1.png"
+  },
+  {
+    "name": "Fish Steak",
+    "description": "Quality fish steak, suitable for grilling, baking, or pan-searing.",
+    "price": 14.99,
+    "rating": 4.83,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 99,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Fish%20Steak/1.png"
+  },
+  {
+    "name": "Green Bell Pepper",
+    "description": "Fresh and vibrant green bell pepper, perfect for adding color and flavor to your dishes.",
+    "price": 1.29,
+    "rating": 4.28,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 89,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Green%20Bell%20Pepper/1.png"
+  },
+  {
+    "name": "Green Chili Pepper",
+    "description": "Spicy green chili pepper, ideal for adding heat to your favorite recipes.",
+    "price": 0.99,
+    "rating": 4.43,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 8,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Green%20Chili%20Pepper/1.png"
+  },
+  {
+    "name": "Honey Jar",
+    "description": "Pure and natural honey in a convenient jar, perfect for sweetening beverages or drizzling over food.",
+    "price": 6.99,
+    "rating": 3.5,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 25,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Honey%20Jar/1.png"
+  },
+  {
+    "name": "Ice Cream",
+    "description": "Creamy and delicious ice cream, available in various flavors for a delightful treat.",
+    "price": 5.49,
+    "rating": 3.77,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 76,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Ice%20Cream/1.png"
+  },
+  {
+    "name": "Juice",
+    "description": "Refreshing fruit juice, packed with vitamins and great for staying hydrated.",
+    "price": 3.99,
+    "rating": 3.41,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 99,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Juice/1.png"
+  },
+  {
+    "name": "Kiwi",
+    "description": "Nutrient-rich kiwi, perfect for snacking or adding a tropical twist to your dishes.",
+    "price": 2.49,
+    "rating": 4.37,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 1,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Kiwi/1.png"
+  },
+  {
+    "name": "Lemon",
+    "description": "Zesty and tangy lemons, versatile for cooking, baking, or making refreshing beverages.",
+    "price": 0.79,
+    "rating": 4.25,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 0,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Lemon/1.png"
+  },
+  {
+    "name": "Milk",
+    "description": "Fresh and nutritious milk, a staple for various recipes and daily consumption.",
+    "price": 3.49,
+    "rating": 3.14,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 57,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Milk/1.png"
+  },
+  {
+    "name": "Mulberry",
+    "description": "Sweet and juicy mulberries, perfect for snacking or adding to desserts and cereals.",
+    "price": 4.99,
+    "rating": 3.19,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 79,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Mulberry/1.png"
+  },
+  {
+    "name": "Nescafe Coffee",
+    "description": "Quality coffee from Nescafe, available in various blends for a rich and satisfying cup.",
+    "price": 7.99,
+    "rating": 2.54,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 22,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Nescafe%20Coffee/1.png"
+  },
+  {
+    "name": "Potatoes",
+    "description": "Versatile and starchy potatoes, great for roasting, mashing, or as a side dish.",
+    "price": 2.29,
+    "rating": 3.82,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 8,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Potatoes/1.png"
+  },
+  {
+    "name": "Protein Powder",
+    "description": "Nutrient-packed protein powder, ideal for supplementing your diet with essential proteins.",
+    "price": 19.99,
+    "rating": 3.91,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 65,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Protein%20Powder/1.png"
+  },
+  {
+    "name": "Red Onions",
+    "description": "Flavorful and aromatic red onions, perfect for adding depth to your savory dishes.",
+    "price": 1.99,
+    "rating": 4.08,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 86,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Red%20Onions/1.png"
+  },
+  {
+    "name": "Rice",
+    "description": "High-quality rice, a staple for various cuisines and a versatile base for many dishes.",
+    "price": 5.99,
+    "rating": 3.94,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 49,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Rice/1.png"
+  },
+  {
+    "name": "Soft Drinks",
+    "description": "Assorted soft drinks in various flavors, perfect for refreshing beverages.",
+    "price": 1.99,
+    "rating": 4.59,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 78,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Soft%20Drinks/1.png"
+  },
+  {
+    "name": "Strawberry",
+    "description": "Sweet and succulent strawberries, great for snacking, desserts, or blending into smoothies.",
+    "price": 3.99,
+    "rating": 4.5,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 9,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Strawberry/1.png"
+  },
+  {
+    "name": "Tissue Paper Box",
+    "description": "Convenient tissue paper box for everyday use, providing soft and absorbent tissues.",
+    "price": 2.49,
+    "rating": 4.55,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 97,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Tissue%20Paper%20Box/1.png"
+  },
+  {
+    "name": "Water",
+    "description": "Pure and refreshing bottled water, essential for staying hydrated throughout the day.",
+    "price": 0.99,
+    "rating": 2.93,
+    "category": "668f885ffb73530d5010976f",
+    "countInStock": 95,
+    "images": "https://cdn.dummyjson.com/products/images/groceries/Water/1.png"
+  }
+]

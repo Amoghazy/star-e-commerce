@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Black Sun Glasses",
+    "description": "The Black Sun Glasses are a classic and stylish choice, featuring a sleek black frame and tinted lenses. They provide both UV protection and a fashionable look.",
+    "price": 29.99,
+    "rating": 3.23,
+    "category": "668f885ffb73530d50109779",
+    "brand": "Fashion Shades",
+    "countInStock": 100,
+    "images": "https://cdn.dummyjson.com/products/images/sunglasses/Black%20Sun%20Glasses/1.png"
+  },
+  {
+    "name": "Classic Sun Glasses",
+    "description": "The Classic Sun Glasses offer a timeless design with a neutral frame and UV-protected lenses. These sunglasses are versatile and suitable for various occasions.",
+    "price": 24.99,
+    "rating": 2.99,
+    "category": "668f885ffb73530d50109779",
+    "brand": "Fashion Shades",
+    "countInStock": 100,
+    "images": "https://cdn.dummyjson.com/products/images/sunglasses/Classic%20Sun%20Glasses/1.png"
+  },
+  {
+    "name": "Green and Black Glasses",
+    "description": "The Green and Black Glasses feature a bold combination of green and black colors, adding a touch of vibrancy to your eyewear collection. They are both stylish and eye-catching.",
+    "price": 34.99,
+    "rating": 2.84,
+    "category": "668f885ffb73530d50109779",
+    "brand": "Fashion Shades",
+    "countInStock": 74,
+    "images": "https://cdn.dummyjson.com/products/images/sunglasses/Green%20and%20Black%20Glasses/1.png"
+  },
+  {
+    "name": "Party Glasses",
+    "description": "The Party Glasses are designed to add flair to your party outfit. With unique shapes or colorful frames, they're perfect for adding a playful touch to your look during celebrations.",
+    "price": 19.99,
+    "rating": 3.21,
+    "category": "668f885ffb73530d50109779",
+    "brand": "Fashion Fun",
+    "countInStock": 35,
+    "images": "https://cdn.dummyjson.com/products/images/sunglasses/Party%20Glasses/1.png"
+  },
+  {
+    "name": "668f885ffb73530d50109779",
+    "description": "The Sunglasses offer a classic and simple design with a focus on functionality. These sunglasses provide essential UV protection while maintaining a timeless look.",
+    "price": 22.99,
+    "rating": 2.58,
+    "category": "668f885ffb73530d50109779",
+    "brand": "Fashion Shades",
+    "countInStock": 59,
+    "images": "https://cdn.dummyjson.com/products/images/sunglasses/Sunglasses/1.png"
+  }
+]

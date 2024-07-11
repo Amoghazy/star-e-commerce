@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { storeImage } from "../../cashImage";
 import { PRODUCT_URL, UPLOAd_URL } from "../constant";
 
 import { apiSlice } from "./apiSlice";
@@ -8,7 +9,15 @@ const productApiSclice = apiSlice.injectEndpoints({
     getAllProducts: builder.query({
       query: (page) => `${PRODUCT_URL}?page=${page}`,
       providesTags: ["Product"],
-      keepUnusedDataFor: 5,
+      keepUnusedDataFor: 60 * 60,
+      transformResponse: (response: any) => {
+        response.data.forEach((product: any) => {
+          fetch(product.image)
+            .then((res) => res.blob())
+            .then((blob) => storeImage(product.image, blob));
+        });
+        return response;
+      },
     }),
     getProductsById: builder.query({
       query: (id) => ({
@@ -87,6 +96,24 @@ const productApiSclice = apiSlice.injectEndpoints({
     }),
   }),
 });
+
+// ----this is for caching image but not effective because of size of image and small storage limit (typically around 5MB) ----
+// const cacheImage = (imageUrl: any) => {
+//   const cachedImage = localStorage.getItem(imageUrl);
+//   if (!cachedImage) {
+//     fetch(imageUrl)
+//       .then((response) => response.blob())
+//       .then((blob) => {
+//         const reader = new FileReader();
+//         reader.onload = () => {
+//           if (reader.result) {
+//             localStorage.setItem(imageUrl, reader.result as string);
+//           }
+//         };
+//         reader.readAsDataURL(blob);
+//       });
+//   }
+// };
 export const {
   useGetAllProductsQuery,
   useGetProductsByIdQuery,
