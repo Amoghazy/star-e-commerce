@@ -32,6 +32,7 @@
     "@types/jsonwebtoken": "^9.0.6",
     "@types/multer": "^1.4.11",
     "@types/node": "^20.14.9",
+    "@types/react-slick": "^0.23.13",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3"
   }

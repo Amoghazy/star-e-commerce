@@ -1,8 +1,10 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import asyncHandler from "../middlewares/asyancHandelr";
 import Product from "../models/productModel";
 import createError from "../utils/errorCreate";
 import deleteFile from "./../utils/deleteFile";
+import mongoose, { Types } from "mongoose";
+import Category from "./../models/categoryModel";
 const createProduct = asyncHandler(async (req: Request, res: Response) => {
   req.body.image = req.file?.path
     ? req.file?.path.replace(/\\/g, "/")
@@ -39,7 +41,7 @@ const createProduct = asyncHandler(async (req: Request, res: Response) => {
 
 const deleteProduct = asyncHandler(async (req: Request, res: Response) => {
   const { id } = req.params;
-  
+
   const product = await Product.findByIdAndDelete(id);
 
   if (product) {
@@ -58,7 +60,7 @@ const updateProduct = asyncHandler(async (req: Request, res: Response) => {
     : req.body.image[0].replace(/\\/g, "/");
   const { name, brand, category, price, description, image } = req.body;
   const { id } = req.params;
-  console.log(image);
+
   switch (true) {
     case !name?.trim() || !name:
       throw createError.createError(400, "Name Is Required", "Bad Request");
@@ -97,7 +99,7 @@ const getAllProducts = asyncHandler(async (req: Request, res: Response) => {
   const skip = (page - 1) * limit;
   const productsCount = await Product.countDocuments();
   const products = await Product.find({})
-    .populate("category")
+    .populate("category reviews.user")
     .skip(skip)
     .limit(limit);
   res.status(200).json({
@@ -111,7 +113,7 @@ const getAllProducts = asyncHandler(async (req: Request, res: Response) => {
 });
 const getProductById = asyncHandler(async (req: Request, res: Response) => {
   const { id } = req.params;
-  const product = await Product.findById(id);
+  const product = await Product.findById(id).populate("category reviews.user");
   if (!product) {
     throw createError.createError(404, "Product Not Found", "Not Found");
   }
@@ -123,7 +125,9 @@ const getProductById = asyncHandler(async (req: Request, res: Response) => {
 });
 const addProductReview = asyncHandler(async (req: any, res: Response) => {
   const { rating, comment } = req.body;
+
   const product = await Product.findById(req.params.id);
+
   if (!product) {
     throw createError.createError(404, "Product Not Found", "Not Found");
   }
@@ -137,6 +141,7 @@ const addProductReview = asyncHandler(async (req: any, res: Response) => {
       "Bad Request"
     );
   }
+
   const review = {
     name: req.user.username,
     rating: Number(rating),
@@ -159,7 +164,10 @@ const addProductReview = asyncHandler(async (req: any, res: Response) => {
   });
 });
 const getTopProducts = asyncHandler(async (req: Request, res: Response) => {
-  const products = await Product.find({}).sort({ rating: -1 }).limit(16);
+  const products = await Product.find({})
+    .populate("category reviews.user")
+    .sort({ rating: -1 })
+    .limit(16);
   res.status(200).json({
     success: true,
     message: "Top Products Found",
@@ -167,13 +175,34 @@ const getTopProducts = asyncHandler(async (req: Request, res: Response) => {
   });
 });
 const getNewProducts = asyncHandler(async (req: Request, res: Response) => {
-  const products = await Product.find({}).sort({ createdAt: -1 }).limit(16);
+  const products = await Product.find({})
+    .populate("category reviews.user")
+    .sort({ createdAt: -1 })
+    .limit(16);
   res.status(200).json({
     success: true,
     message: "New Products Found",
     data: products,
   });
 });
+const getProductsByCAtegory = asyncHandler(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { id } = req.params;
+
+    if (id) {
+      const categoryId = new Types.ObjectId(id);
+      const products = await Product.find({
+        category: categoryId,
+      });
+      console.log("[200] get products by category success : ", id);
+      res.status(200).json({
+        success: true,
+        message: "Products Found",
+        data: products,
+      });
+    }
+  }
+);
 export {
   createProduct,
   deleteProduct,
@@ -183,4 +212,5 @@ export {
   addProductReview,
   getTopProducts,
   getNewProducts,
+  getProductsByCAtegory,
 };

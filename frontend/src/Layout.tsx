@@ -5,7 +5,7 @@ function Layout() {
   return (
     <>
       <Navigation />
-      <main className="py-4">
+      <main className="py-4 pb-20">
         <Outlet />
       </main>
     </>

@@ -8,6 +8,7 @@ import {
   updateProduct,
   getTopProducts,
   getNewProducts,
+  getProductsByCAtegory,
 } from "../controllers/productController";
 import { authonticate, authorizeAdmin } from "../middlewares/authMiddelware";
 import upload from "../middlewares/uploadMiddelware";
@@ -19,7 +20,9 @@ router
   .route("/")
   .post(authonticate, authorizeAdmin, upload.single("image"), createProduct)
   .get(getAllProducts);
+router.get("/category/:id", checkValidId, getProductsByCAtegory);
 router.get("/top", getTopProducts);
+
 router.get("/new", getNewProducts);
 
 router.post("/:id/review", authonticate, addProductReview);
