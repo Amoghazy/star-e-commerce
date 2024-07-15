@@ -20,7 +20,6 @@ const cartSlice = createSlice({
         (item: IProduct) => item._id === product._id
       );
       if (itemIndex >= 0) {
-        state.cartItems[itemIndex].quantity += 1;
         toast.info("Item already in cart", {
           position: "bottom-left",
           autoClose: 1000,
@@ -30,7 +29,7 @@ const cartSlice = createSlice({
           draggable: true,
         });
       } else {
-        state.cartItems.push({ ...action.payload, quantity: 1 });
+        state.cartItems.push(product);
         toast.success("Item added to cart", {
           position: "bottom-left",
           autoClose: 1000,

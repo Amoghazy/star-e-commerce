@@ -94,6 +94,29 @@ const productApiSclice = apiSlice.injectEndpoints({
       }),
       invalidatesTags: ["Product"],
     }),
+    getFiltredProducts: builder.query({
+      query: ({ category, brand, price }) => {
+        const query = [];
+
+        if (category) {
+          query.push(`category=${category.join(",")}`);
+        }
+        if (brand) {
+          query.push(`brand=${brand.join(",")}`);
+        }
+        if (price) {
+          query.push(`price=${price}`);
+        }
+
+        const queryString = query.length ? `?${query.join("&")}` : "";
+
+        return {
+          url: `${PRODUCT_URL}/filter${queryString}`,
+        };
+      },
+      providesTags: ["Product"],
+      keepUnusedDataFor: 5,
+    }),
   }),
 });
 
@@ -125,4 +148,5 @@ export const {
   useDeleteProductMutation,
   useGetImageQuery,
   useAddReviewMutation,
+  useGetFiltredProductsQuery,
 }: any = productApiSclice;

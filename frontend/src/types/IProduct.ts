@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export default interface IProduct {
   _id: string;
   name: string;
@@ -15,4 +16,5 @@ export default interface IProduct {
   ceatedAt: Date;
   updatedAt: Date;
   reviews: any[];
+  countPices?: number;
 }

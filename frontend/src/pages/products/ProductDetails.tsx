@@ -1,10 +1,9 @@
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { useGetProductsByIdQuery } from "../../redux/api/productApiSilce";
 import {
   FaArrowLeft,
   FaClock,
-  FaHeart,
   FaShoppingBag,
   FaStar,
   FaStore,
@@ -16,10 +15,12 @@ import { useState } from "react";
 import Skeleton from "../../components/Skeleton";
 import { toast } from "react-toastify";
 import ProductTabs from "./ProductTabs";
+import { addToCart } from "../../redux/slices/cartSlice";
 
 export default function ProductDetails() {
   const { id } = useParams();
-  const { userInfo } = useSelector((state: any) => state.auth);
+  const dispatch = useDispatch();
+
   const {
     data: product,
     isLoading,
@@ -33,6 +34,14 @@ export default function ProductDetails() {
       error?.data?.message || "Something went wrong please reload the page"
     );
   }
+  const handleAddToCart = () => {
+    dispatch(
+      addToCart({
+        ...product?.data,
+        countPices,
+      })
+    );
+  };
   return (
     <>
       <section className="container w-full pt-5 pl-20 overflow-hidden">
@@ -126,7 +135,10 @@ export default function ProductDetails() {
                   </button>
                 </div>
 
-                <button className="p-1 ml-2 text-sm rounded-md hover:bg-secondry bg-primary sm:text-base sm:p-2">
+                <button
+                  onClick={handleAddToCart}
+                  className="p-1 ml-2 text-sm rounded-md hover:bg-secondry bg-primary sm:text-base sm:p-2"
+                >
                   Add To Cart
                 </button>
               </div>
@@ -134,7 +146,7 @@ export default function ProductDetails() {
           )}
           <div></div>
         </div>
-        <ProductTabs product={product?.data} user={userInfo} />
+        <ProductTabs product={product?.data} />
       </section>
     </>
   );

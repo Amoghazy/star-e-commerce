@@ -10,3 +10,56 @@
     -moz-appearance: textfield !important;
   }
 }
+
+:root {
+  scroll-behavior: smooth;
+  --sb-track-color: #0a0a0a;
+  --sb-thumb-color: #7dccfc;
+  --sb-size: 8px;
+}
+
+:root::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+:root::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 8px;
+}
+
+:root::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 8px;
+  border: 1px solid #7dccfc;
+}
+
+:root::-webkit-scrollbar-button {
+  display: none;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+.scroll-wrapper{
+  scroll-behavior: smooth;
+}
+.scroll-wrapper::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.scroll-wrapper::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 10px;
+}
+
+.scroll-wrapper::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 20px;
+  border: 1px solid #7dccfc;
+}
+
+.scroll-wrapper::-webkit-scrollbar-button {
+  display: none;
+}

@@ -18,6 +18,9 @@ import { toast } from "react-toastify";
 export default function Navigation() {
   const userInfo = useSelector((state: any) => state.auth.userInfo);
   const favourites = useSelector((state: any) => state.favourites);
+  const { cartItems } = useSelector((state: any) => state.cart);
+  console.log(cartItems);
+  const countCart = cartItems?.length;
   const count = favourites?.length;
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -86,6 +89,11 @@ export default function Navigation() {
               size={20}
               className="p-0 -mr-2 text-white group-hover:mr-2 "
             />
+            {countCart > 0 ? (
+              <span className="absolute px-2 text-sm font-semibold text-white transition-all rounded-full -top-1 -right-3 group-hover:top-1 bg-primary group-hover:bg-secondry group-hover:right-1">
+                {countCart}
+              </span>
+            ) : null}
             <span className="hidden transition-opacity duration-200 ease-in-out group-hover:block">
               Cart
             </span>
@@ -99,7 +107,7 @@ export default function Navigation() {
               className="p-0 -mr-2 text-white group-hover:mr-2 "
             />{" "}
             {count > 0 ? (
-              <span className="absolute px-2 text-sm font-bold text-white transition-all rounded-full -top-1 -right-1 group-hover:top-1 bg-primary group-hover:bg-secondry group-hover:right-1">
+              <span className="absolute px-2 text-sm font-bold text-white transition-all rounded-full -top-1 -right-3 group-hover:top-1 bg-primary group-hover:bg-secondry group-hover:right-1">
                 {count}
               </span>
             ) : null}
@@ -236,30 +244,26 @@ export default function Navigation() {
             to="/shop"
             className="flex flex-col items-center justify-center py-2"
           >
-            <AiOutlineShopping
-              size={20}
-              className=""
-            />
+            <AiOutlineShopping size={20} className="" />
             <span className="">Shop</span>
           </Link>
           <Link
             to="/cart"
             className="flex flex-col items-center justify-center py-2"
           >
-            <AiOutlineShoppingCart
-              size={20}
-              className=""
-            />
+            <AiOutlineShoppingCart size={20} className="" />
+            {countCart > 0 ? (
+              <span className="absolute top-0 px-2 text-sm font-bold text-white transition-all rounded-full -right-0 group-hover:top-1 bg-primary ">
+                {countCart}
+              </span>
+            ) : null}
             <span className="">Cart</span>
           </Link>
           <Link
             to="/favourites"
             className="relative flex flex-col items-center justify-center py-2"
           >
-            <FaHeart
-              size={20}
-              className=""
-            />{" "}
+            <FaHeart size={20} className="" />{" "}
             {count > 0 ? (
               <span className="absolute top-0 px-2 text-sm font-bold text-white transition-all rounded-full -right-0 group-hover:top-1 bg-primary ">
                 {count}

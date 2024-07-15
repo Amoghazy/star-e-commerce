@@ -1,9 +1,16 @@
-export const updateCart = (state) => {
-  state.itemsPrice = state.cartItems.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
-  state.shippingPrice = state.itemsPrice > 100 ? 0 : 10;
+import IProduct from "../types/IProduct";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const updateCart = (state: any) => {
+  state.itemsPrice = state.cartItems
+    .reduce(
+      (acc: number, item: IProduct) => acc + item.price * item.countPices!,
+      0
+    )
+    .toFixed(2);
+
+  state.shippingPrice = state.itemsPrice < 100 ? 0 : 10;
+
   state.taxPrice = Number((0.15 * state.itemsPrice).toFixed(2));
   state.totalPrice = (
     Number(state.itemsPrice) +

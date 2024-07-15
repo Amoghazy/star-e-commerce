@@ -203,6 +203,56 @@ const getProductsByCAtegory = asyncHandler(
     }
   }
 );
+const getFilterProducts = asyncHandler(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { category, brand, price } = req.query;
+
+    let query: any = {};
+
+    if (category) {
+      console.log("categry is Array", Array.isArray(category));
+      const categoryStr = Array.isArray(category)
+        ? category
+        : (category as string).split(",");
+      query.category = {
+        $in: categoryStr,
+      };
+    }
+
+    if (brand) {
+      let brandStr = Array.isArray(brand)
+        ? brand
+        : (brand as string).split(",");
+      brandStr = brandStr.map((brand: any) => {
+        return brand.replace("%20", " ");
+      });
+
+      const brandConditions = brandStr.map((brand: any) => ({
+        $or: [{ brand: brand }, { brand: { $regex: brand, $options: "i" } }],
+      }));
+
+      query.$or = brandConditions;
+    }
+
+    if (price) {
+      query.price = { $lte: Number(price) };
+    }
+
+    console.log(query);
+    try {
+      const products = await Product.find(query).populate("category");
+
+      res.status(200).json({
+        success: true,
+        message: "Products Found",
+        data: products,
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
 export {
   createProduct,
   deleteProduct,
@@ -213,4 +263,5 @@ export {
   getTopProducts,
   getNewProducts,
   getProductsByCAtegory,
+  getFilterProducts,
 };
