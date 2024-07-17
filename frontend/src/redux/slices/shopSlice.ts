@@ -6,6 +6,7 @@ interface ShopState {
   products: IProduct[];
   allBrands: string[];
   visibleBrands: string[];
+  price: string | null;
 }
 
 const initialState: ShopState = {
@@ -14,6 +15,7 @@ const initialState: ShopState = {
   products: [] as IProduct[],
   allBrands: [],
   visibleBrands: [],
+  price: null,
 };
 
 const shopSlice = createSlice({
@@ -38,6 +40,10 @@ const shopSlice = createSlice({
     setCheckedBrand(state, action) {
       state.checkedBrand = action.payload;
     },
+
+    setPriceSearch(state, action) {
+      state.price = action.payload;
+    },
   },
 });
 
@@ -47,6 +53,7 @@ export const {
   setVisibleBrands,
   setCheckedCategory,
   setCheckedBrand,
+  setPriceSearch,
 } = shopSlice.actions;
 
 export default shopSlice.reducer;

@@ -116,6 +116,30 @@ const productApiSclice = apiSlice.injectEndpoints({
       },
       providesTags: ["Product"],
       keepUnusedDataFor: 5,
+      transformResponse: (response: any) => {
+        response.data.forEach((product: any) => {
+          fetch(product.image)
+            .then((res) => res.blob())
+            .then((blob) => storeImage(product.image, blob));
+        });
+        return response;
+      },
+    }),
+    getBrandsByCategory: builder.query({
+      query: (category) => {
+        const query = [];
+
+        if (category) {
+          query.push(`category=${category.join(",")}`);
+        }
+
+        const queryString = query.length ? `?${query.join("&")}` : "";
+        return {
+          url: `${PRODUCT_URL}/brands${queryString}`,
+        };
+      },
+      providesTags: ["Product"],
+      keepUnusedDataFor: 60 * 60,
     }),
   }),
 });
@@ -149,4 +173,5 @@ export const {
   useGetImageQuery,
   useAddReviewMutation,
   useGetFiltredProductsQuery,
+  useGetBrandsByCategoryQuery,
 }: any = productApiSclice;

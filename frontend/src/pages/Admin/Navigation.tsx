@@ -249,11 +249,11 @@ export default function Navigation() {
           </Link>
           <Link
             to="/cart"
-            className="flex flex-col items-center justify-center py-2"
+            className="relative flex flex-col items-center justify-center py-2"
           >
             <AiOutlineShoppingCart size={20} className="" />
             {countCart > 0 ? (
-              <span className="absolute top-0 px-2 text-sm font-bold text-white transition-all rounded-full -right-0 group-hover:top-1 bg-primary ">
+              <span className="absolute top-0 px-2 text-sm font-bold text-white transition-all rounded-full -right-3 group-hover:top-1 bg-primary ">
                 {countCart}
               </span>
             ) : null}
@@ -265,7 +265,7 @@ export default function Navigation() {
           >
             <FaHeart size={20} className="" />{" "}
             {count > 0 ? (
-              <span className="absolute top-0 px-2 text-sm font-bold text-white transition-all rounded-full -right-0 group-hover:top-1 bg-primary ">
+              <span className="absolute top-0 px-2 text-sm font-bold text-white transition-all rounded-full right-1 group-hover:top-1 bg-primary ">
                 {count}
               </span>
             ) : null}

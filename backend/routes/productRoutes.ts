@@ -10,6 +10,7 @@ import {
   getNewProducts,
   getProductsByCAtegory,
   getFilterProducts,
+  getBrandsByCategory,
 } from "../controllers/productController";
 import { authonticate, authorizeAdmin } from "../middlewares/authMiddelware";
 import upload from "../middlewares/uploadMiddelware";
@@ -24,6 +25,7 @@ router
 router.get("/filter", getFilterProducts);
 router.get("/category/:id", checkValidId, getProductsByCAtegory);
 router.get("/top", getTopProducts);
+router.get("/brands", getBrandsByCategory);
 
 router.get("/new", getNewProducts);
 

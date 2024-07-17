@@ -7,6 +7,7 @@ import connectDB from "./config/db";
 import userRoutes from "./routes/userRoutes";
 import categoryRoutes from "./routes/categoryRoutes";
 import productRoutes from "./routes/productRoutes";
+import orderRoutes from "./routes/orderRoutes";
 import path from "path";
 dotenv.config();
 
@@ -22,6 +23,11 @@ app.use("/uploads", express.static(path.join(parentDir, "/uploads")));
 app.use("/api/user", userRoutes);
 app.use("/api/category", categoryRoutes);
 app.use("/api/product", productRoutes);
+app.use("/api/orders", orderRoutes);
+
+app.get("/api/paypal/config", (req: Request, res: Response) => {
+  res.json(process.env.PAYPAL_CLIENT_ID);
+});
 
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   console.log(err.message + " err middelware ");

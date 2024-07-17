@@ -2,7 +2,7 @@
 import { FaHeart, FaRegHeart, FaStar } from "react-icons/fa";
 import IProduct from "../../types/IProduct";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   addToFavourite,
   removeFromFavourite,
@@ -11,10 +11,22 @@ import { GiShoppingCart } from "react-icons/gi";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
 import { addToCart } from "../../redux/slices/cartSlice";
+import { getImage } from "../../cashImage";
 
 export default function ProductCardShop({ product }: { product: IProduct }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [image, setImage] = useState(product.image);
+  useEffect(() => {
+    if (product) {
+      getImage(product.image).then((cachedImage) => {
+        if (cachedImage) {
+          setImage(URL.createObjectURL(cachedImage.blob));
+        }
+      });
+    }
+  }, [product]);
+
   const favourites = useSelector((state: any) => state.favourites);
   const isExist = favourites.some((p: IProduct) => p._id === product._id);
   const [isFavourite, setIsFavourite] = useState(isExist);
@@ -32,11 +44,7 @@ export default function ProductCardShop({ product }: { product: IProduct }) {
   return (
     <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white  bg-clip-border text-gray-700 shadow-lg">
       <div className="relative flex justify-center mx-4 mt-4 overflow-hidden text-white border shadow-lg rounded-xl bg-clip-border shadow-[#e0e0e0]">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="object-contain h-48 "
-        />
+        <img src={image} alt={product.name} className="object-contain h-48 " />
         <div className="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-tr from-transparent via-transparent to-black/60"></div>
         <span className="absolute px-1 rounded-lg bottom-4 right-4 bg-primary/60">
           {" "}
@@ -89,7 +97,7 @@ export default function ProductCardShop({ product }: { product: IProduct }) {
       </div>
       <div className="flex justify-between w-full p-6 pt-3">
         <button
-          onClick={() => navigate(`/products/${product._id}`)}
+          onClick={() => navigate(`/product/${product._id}`)}
           className=" select-none flex gap-1 rounded-lg bg-primary py-2 px-3 text-center  font-sans text-sm font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
           type="button"
         >

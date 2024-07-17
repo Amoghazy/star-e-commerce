@@ -16,6 +16,9 @@ import Favourites from "./pages/products/Favourites";
 import ProductDetails from "./pages/products/ProductDetails";
 import Cart from "./pages/User/Cart";
 import Shop from "./pages/User/Shop";
+import Shipping from "./pages/orders/Shipping";
+import PlaceOrder from "./pages/orders/PlaceOrder";
+import Order from "./pages/orders/Order";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +48,23 @@ const router = createBrowserRouter([
         element: <ProductDetails />,
       },
       {
+        path: "/shipping",
+        element: (
+          <GardUser>
+            {" "}
+            <Shipping />
+          </GardUser>
+        ),
+      },
+      {
+        path: "/checkout",
+        element: (
+          <GardUser>
+            <PlaceOrder />,
+          </GardUser>
+        ),
+      },
+      {
         path: "/shop",
         element: <Shop />,
       },
@@ -61,6 +81,14 @@ const router = createBrowserRouter([
         element: (
           <GardUser>
             <Profile />
+          </GardUser>
+        ),
+      },
+      {
+        path: "order/:id",
+        element: (
+          <GardUser>
+            <Order />
           </GardUser>
         ),
       },

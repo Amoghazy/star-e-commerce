@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { FaTrash } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart } from "../../redux/slices/cartSlice";
+import { removeFromCart, updateCountPices } from "../../redux/slices/cartSlice";
 import IProduct from "../../types/IProduct";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   const dispatch = useDispatch();
@@ -47,6 +48,14 @@ export default function Cart() {
                         </label>
 
                         <select
+                          onChange={(e) => {
+                            dispatch(
+                              updateCountPices({
+                                ...item,
+                                countPices: Number(e.target.value),
+                              })
+                            );
+                          }}
                           id="Quantity"
                           className="w-16 h-8 p-0 text-xs text-center text-gray-600 border-gray-200 rounded bg-gray-50 focus:outline-none focus:ring-0 focus:border-0 "
                         >
@@ -103,12 +112,12 @@ export default function Cart() {
                   <div className="flex justify-end"></div>
 
                   <div className="flex justify-end">
-                    <a
-                      href="#"
+                    <Link
+                      to="/shipping"
                       className="block px-5 py-3 text-sm text-gray-100 transition rounded bg-primary hover:bg-secondry"
                     >
                       Checkout
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

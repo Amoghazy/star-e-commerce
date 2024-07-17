@@ -205,12 +205,12 @@ const getProductsByCAtegory = asyncHandler(
 );
 const getFilterProducts = asyncHandler(
   async (req: Request, res: Response, next: NextFunction) => {
+    console.log(req.query);
     const { category, brand, price } = req.query;
 
     let query: any = {};
 
     if (category) {
-      console.log("categry is Array", Array.isArray(category));
       const categoryStr = Array.isArray(category)
         ? category
         : (category as string).split(",");
@@ -238,7 +238,6 @@ const getFilterProducts = asyncHandler(
       query.price = { $lte: Number(price) };
     }
 
-    console.log(query);
     try {
       const products = await Product.find(query).populate("category");
 
@@ -252,7 +251,36 @@ const getFilterProducts = asyncHandler(
     }
   }
 );
+const getBrandsByCategory = asyncHandler(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { category } = req.query;
 
+    let query: any = {};
+
+    if (category) {
+      const categoryStr = Array.isArray(category)
+        ? category
+        : (category as string).split(",");
+      query.category = {
+        $in: categoryStr,
+      };
+    }
+    const productsBrand = await Product.find(query)
+      .select("brand -_id")
+      .distinct("brand");
+
+    if (productsBrand.length === 0) {
+      throw createError.createError(404, "Brands Not Found", "Not Found");
+    }
+    console.log("[200] get brands by category success : ", category);
+
+    res.status(200).json({
+      success: true,
+      message: "Brands Found",
+      data: productsBrand,
+    });
+  }
+);
 export {
   createProduct,
   deleteProduct,
@@ -264,4 +292,5 @@ export {
   getNewProducts,
   getProductsByCAtegory,
   getFilterProducts,
+  getBrandsByCategory,
 };
