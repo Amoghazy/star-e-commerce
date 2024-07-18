@@ -13,8 +13,8 @@ const orderApiSlice = apiSlice.injectEndpoints({
       invalidatesTags: ["Order"],
     }),
     getAllOrders: builder.query({
-      query: () => ({
-        url: ORDER_URL,
+      query: (page) => ({
+        url: ORDER_URL + `?page=${page}`,
       }),
       providesTags: ["Order"],
     }),

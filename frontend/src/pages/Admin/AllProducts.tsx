@@ -58,7 +58,7 @@ export default function AllProducts() {
                           : `/${product?.image}`
                       }
                       alt={product?.name}
-                      className="object-cover w-36 h-36"
+                      className="object-contain w-36 h-36"
                     />
 
                     <div className="flex flex-col p-4">

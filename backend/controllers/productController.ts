@@ -5,6 +5,7 @@ import createError from "../utils/errorCreate";
 import deleteFile from "./../utils/deleteFile";
 import mongoose, { Types } from "mongoose";
 import Category from "./../models/categoryModel";
+import Order from "../models/orderModel";
 const createProduct = asyncHandler(async (req: Request, res: Response) => {
   req.body.image = req.file?.path
     ? req.file?.path.replace(/\\/g, "/")
@@ -281,6 +282,90 @@ const getBrandsByCategory = asyncHandler(
     });
   }
 );
+const getTopProductsByQuarter = asyncHandler(
+  async (req: Request, res: Response) => {
+    const salesData = await Order.aggregate([
+      {
+        $match: {
+          isPaid: true,
+        },
+      },
+      { $unwind: "$orderItems" },
+
+      {
+        $group: {
+          _id: {
+            product: "$orderItems.product",
+            year: { $year: "$createdAt" },
+            quarter: {
+              $cond: [
+                { $lte: [{ $month: "$createdAt" }, 3] },
+                1,
+                {
+                  $cond: [
+                    { $lte: [{ $month: "$createdAt" }, 6] },
+                    2,
+                    {
+                      $cond: [{ $lte: [{ $month: "$createdAt" }, 9] }, 3, 4],
+                    },
+                  ],
+                },
+              ],
+            },
+          },
+          totalSales: { $sum: "$orderItems.qty" },
+        },
+      },
+
+      {
+        $sort: {
+          totalSales: -1,
+        },
+      },
+      {
+        $group: {
+          _id: "$_id.product",
+          salesData: {
+            $push: {
+              quarter: "$_id.quarter",
+              year: "$_id.year",
+              totalSales: "$totalSales",
+            },
+          },
+          totalSalesOverall: { $sum: "$totalSales" },
+        },
+      },
+      {
+        $sort: {
+          totalSalesOverall: -1,
+        },
+      },
+      { $limit: 4 },
+
+      {
+        $lookup: {
+          from: "products",
+          localField: "_id",
+          foreignField: "_id",
+          as: "productDetails",
+        },
+      },
+      { $unwind: "$productDetails" },
+      {
+        $project: {
+          _id: 0,
+          productId: "$_id",
+          name: "$productDetails.name",
+          totalSales: 1,
+          salesData: 1,
+          totalSalesOverall: 1,
+        },
+      },
+    ]);
+
+    res.json(salesData);
+  }
+);
 export {
   createProduct,
   deleteProduct,
@@ -288,6 +373,7 @@ export {
   getProductById,
   updateProduct,
   addProductReview,
+  getTopProductsByQuarter,
   getTopProducts,
   getNewProducts,
   getProductsByCAtegory,

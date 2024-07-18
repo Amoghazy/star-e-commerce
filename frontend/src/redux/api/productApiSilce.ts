@@ -141,6 +141,14 @@ const productApiSclice = apiSlice.injectEndpoints({
       providesTags: ["Product"],
       keepUnusedDataFor: 60 * 60,
     }),
+    getTopProductsByQuarter: builder.query({
+      query: () => ({
+        url: `${PRODUCT_URL}/top/quarter`,
+        method: "GET",
+      }),
+      providesTags: ["Product"],
+      keepUnusedDataFor: 60 * 60,
+    }),
   }),
 });
 
@@ -174,4 +182,5 @@ export const {
   useAddReviewMutation,
   useGetFiltredProductsQuery,
   useGetBrandsByCategoryQuery,
+  useGetTopProductsByQuarterQuery,
 }: any = productApiSclice;

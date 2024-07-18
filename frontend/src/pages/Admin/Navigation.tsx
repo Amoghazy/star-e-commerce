@@ -13,7 +13,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../redux/api/userApiSlice";
 import { logout } from "../../redux/slices/authSlice";
 import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
-import { TbLogout2 } from "react-icons/tb";
+import { TbLogout2, TbReorder } from "react-icons/tb";
 import { toast } from "react-toastify";
 export default function Navigation() {
   const userInfo = useSelector((state: any) => state.auth.userInfo);
@@ -115,6 +115,18 @@ export default function Navigation() {
               Favourite
             </span>
           </Link>
+          <Link
+            to="/my-orders"
+            className="flex items-center py-2 my-2 transition-transform transform rounded hover:bg-primary hover:translate-x-2"
+          >
+            <TbReorder
+              size={20}
+              className="p-0 -mr-2 text-white group-hover:mr-2 "
+            />{" "}
+            <span className="hidden duration-200 ease-in-out hiddentransition-opacity group-hover:block">
+              My Orders
+            </span>
+          </Link>
         </div>
 
         <div className="relative ">
@@ -186,7 +198,7 @@ export default function Navigation() {
                     Categories
                   </Link>
                   <Link
-                    to={"/admin/orders"}
+                    to={"/admin/orders-list"}
                     className="block px-4 py-2 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700"
                   >
                     Orders

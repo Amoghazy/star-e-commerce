@@ -7,6 +7,7 @@ import {
 } from "../../redux/api/userApiSlice";
 import { toast } from "react-toastify";
 import Loader from "../../components/Loader";
+import AdminMenu from "./AdminMenu";
 
 export default function UsersList() {
   const { data: users, isLoading, refetch } = useGetAllUsersQuery();
@@ -61,6 +62,7 @@ export default function UsersList() {
 
   return (
     <div className="pl-20 text-gray-900">
+      <AdminMenu />
       <div className="flex p-4">
         <h1 className="text-3xl font-bold text-white">Users</h1>
       </div>

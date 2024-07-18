@@ -10,6 +10,7 @@ import {
 } from "../../redux/api/categoryApiSlice";
 import Modal from "../../components/Modal";
 import { toast, ToastOptions } from "react-toastify";
+import AdminMenu from "./AdminMenu";
 
 export default function CategoryList() {
   const { data: categories, isLoading } = useGetAllCategoriesQuery();
@@ -72,6 +73,7 @@ export default function CategoryList() {
   return (
     <>
       {" "}
+      <AdminMenu />
       <section className="container relative mx-auto min-w-96">
         <div className="flex p-12">
           <h1 className="text-3xl font-bold text-white">Category Mange</h1>

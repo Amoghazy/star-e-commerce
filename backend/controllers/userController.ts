@@ -73,10 +73,12 @@ const logoutUser = asyncHandler(async (req: Request, res: Response) => {
 });
 const getAllUsers = asyncHandler(async (req: Request, res: Response) => {
   const users = await User.find().select("-password -__v");
+  const count = users.length;
   res.status(200).json({
     success: true,
     message: "All Users",
     data: users,
+    totalUsers: count,
   });
 });
 const getCurrentUserProfile = asyncHandler(async (req: any, res: Response) => {
@@ -178,10 +180,22 @@ const updateUserById = asyncHandler(async (req: any, res: Response) => {
     data: user,
   });
 });
+const getNewUsers = asyncHandler(async (req: Request, res: Response) => {
+  const users = await User.find({
+    createdAt: { $gte: new Date(Date.now() - 24 * 60 * 60 * 1000) },
+  }).countDocuments();
+
+  res.status(200).json({
+    success: true,
+    message: "All Users",
+    data: users,
+  });
+});
 export {
   createUsers,
   loginUser,
   logoutUser,
+  getNewUsers,
   getAllUsers,
   getCurrentUserProfile,
   updateCurrentUserProfile,

@@ -22,7 +22,7 @@ export default function AdminMenu() {
         )}
       </button>
       {open && (
-        <div className="fixed z-50 space-y-5 bg-gray-800 rounded-md right-7 top-11 w-fit h-1/2">
+        <div className="fixed z-50 pb-5 space-y-5 bg-gray-800 rounded-md h-fit right-7 top-11 w-fit">
           <div className="px-4 mt-10">
             <NavLink
               to="/admin/dashboard"
@@ -72,21 +72,10 @@ export default function AdminMenu() {
               Create Category
             </NavLink>
           </div>
+
           <div className="px-4 ">
             <NavLink
-              to="/admin/product-update"
-              className={({ isActive }) =>
-                `${
-                  isActive ? "text-primary" : "text-white"
-                } font-medium tesxt-sm hover:bg-gray-400 hover:bg-opacity-45 rounded-md p-2`
-              }
-            >
-              Product Users
-            </NavLink>
-          </div>
-          <div className="px-4 ">
-            <NavLink
-              to="/admin/product-update"
+              to="/admin/orders-list"
               className={({ isActive }) =>
                 `${
                   isActive ? "text-primary" : "text-white"

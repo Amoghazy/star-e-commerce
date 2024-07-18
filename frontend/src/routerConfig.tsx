@@ -19,6 +19,9 @@ import Shop from "./pages/User/Shop";
 import Shipping from "./pages/orders/Shipping";
 import PlaceOrder from "./pages/orders/PlaceOrder";
 import Order from "./pages/orders/Order";
+import MyOrder from "./pages/orders/MyOrder";
+import OrderList from "./pages/Admin/OrderList";
+import Dashboard from "./pages/Admin/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +56,15 @@ const router = createBrowserRouter([
           <GardUser>
             {" "}
             <Shipping />
+          </GardUser>
+        ),
+      },
+      {
+        path: "/my-orders",
+        element: (
+          <GardUser>
+            {" "}
+            <MyOrder />
           </GardUser>
         ),
       },
@@ -105,6 +117,14 @@ const router = createBrowserRouter([
             ),
           },
           {
+            path: "orders-list",
+            element: (
+              <GardAdmin>
+                <OrderList />
+              </GardAdmin>
+            ),
+          },
+          {
             path: "category-list",
             element: (
               <GardAdmin>
@@ -133,6 +153,14 @@ const router = createBrowserRouter([
             element: (
               <GardAdmin>
                 <ProductUpdate />
+              </GardAdmin>
+            ),
+          },
+          {
+            path: "dashboard",
+            element: (
+              <GardAdmin>
+                <Dashboard />
               </GardAdmin>
             ),
           },

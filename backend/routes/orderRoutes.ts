@@ -18,6 +18,7 @@ router
   .post(authonticate, createOrder)
   .get(authonticate, authorizeAdmin, getAllOrders);
 router.get("/total-sales", authonticate, authorizeAdmin, getTotalSales);
+router.get("/my-orders", authonticate, getUserOrders);
 router.get(
   "/total-sales-dated",
   authonticate,
@@ -27,6 +28,5 @@ router.get(
 router.get("/:id", checkValidId, authonticate, getSpecificOrder);
 router.put("/:id/paid", checkValidId, authonticate, makeOrderPaid);
 router.put("/:id/delivered", checkValidId, authonticate, makeOrderdelivered);
-router.get("/my-orders", authonticate, getUserOrders);
 
 export default router;

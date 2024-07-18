@@ -88,17 +88,30 @@ const createOrder = asyncHandler(async (req: any, res: Response) => {
 });
 
 const getAllOrders = asyncHandler(async (req: any, res: Response) => {
-  const orders = await Order.find({}).populate("user", "username email _id");
+  const { page } = req.query;
+  const limit = 10;
+  const skip = (+page - 1) * limit;
+  const orders = await Order.find({})
+    .skip(skip)
+    .limit(limit)
+    .populate("user", "username email _id")
+    .sort({
+      createdAt: -1,
+    });
   const totalOrders = await Order.find({}).countDocuments();
   res.status(200).json({
     success: true,
     message: "Orders Found",
     data: orders,
     totalOrders,
+    numberOfPages: Math.ceil(totalOrders / limit),
+    page: +page,
   });
 });
 const getUserOrders = asyncHandler(async (req: any, res: Response) => {
-  const orders = await Order.find({ user: req.user._id });
+  const orders = await Order.find({ user: req.user._id }).sort({
+    createdAt: -1,
+  });
   const totalOrders = await Order.find({ user: req.user._id }).countDocuments();
   res.status(200).json({
     success: true,
@@ -111,7 +124,7 @@ const getTotalSales = asyncHandler(async (req: any, res: Response) => {
   const totalSales = await Order.aggregate([
     {
       $match: {
-        isPiad: true,
+        isPaid: true,
       },
     },
     {
@@ -121,29 +134,30 @@ const getTotalSales = asyncHandler(async (req: any, res: Response) => {
       },
     },
   ]);
+
   res.status(200).json({
     success: true,
     message: "Total Sales Found",
-    data: totalSales,
+    data: totalSales[0],
   });
 });
 const getTotalSalesDated = asyncHandler(async (req: any, res: Response) => {
   const totalSales = await Order.aggregate([
     {
       $match: {
-        isPiad: true,
+        isPaid: true,
       },
     },
     {
       $group: {
-        _id: { $dateToString: { format: "%Y-%m-%d", date: "$paidAt" } },
-        totalSales: { $sum: "$itemsPrice" },
+        _id: { $dateToString: { format: "%d-%m-%Y", date: "$paidAt" } }
+,        totalSales: { $sum: "$itemsPrice" },
       },
     },
   ]);
   res.status(200).json({
     success: true,
-    message: "Total Sales Found",
+    message: "Total Sales Dated Found",
     data: totalSales,
   });
 });
