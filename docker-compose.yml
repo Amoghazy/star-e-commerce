@@ -18,12 +18,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-    # command: ["/docker-entrypoint.sh"]
-    # healthcheck:
-    #   test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
-    #   interval: 10s
-    #   timeout: 5s
-    #   retries: 5
+   
 
   app-api:
     build: ./backend
