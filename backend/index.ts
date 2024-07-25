@@ -9,6 +9,7 @@ import categoryRoutes from "./routes/categoryRoutes";
 import productRoutes from "./routes/productRoutes";
 import orderRoutes from "./routes/orderRoutes";
 import path from "path";
+import { fileURLToPath } from "url";
 dotenv.config();
 
 const app = express();
@@ -17,6 +18,9 @@ app.use(express.json());
 
 app.use(cookieParser());
 app.use(cors());
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const parentDir = path.dirname(__dirname);
 
 app.use("/uploads", express.static(path.join(parentDir, "/uploads")));
@@ -28,9 +32,14 @@ app.use("/api/orders", orderRoutes);
 app.get("/api/paypal/config", (req: Request, res: Response) => {
   res.json(process.env.PAYPAL_CLIENT_ID);
 });
-
+app.get("/", (req: Request, res: Response) => {
+  res.json({
+    message: "server is runningg",
+    success: true,
+  });
+});
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
-  console.log(err.message + " err middelware ");
+  console.log(err.message + " err middleware ");
   res.status(err.statusCode || 500).json({
     status: err.statusText || "Failed",
     error: true,
