@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Header from "./components/Header";
 import { useGetTopRatingProductsQuery } from "./redux/api/productApiSilce";
 import IProduct from "./types/IProduct";
@@ -13,7 +12,7 @@ export default function Home() {
 
       <div className="px-20 mt-10">
         <div className="flex items-center justify-between">
-          <h1 className="text-xl fontext-semibold lg:text-3xl">
+          <h1 className="text-xl font-semibold lg:text-3xl">
             Special Products
           </h1>
           <p className="p-2 rounded-md bg-primary md:rounded-full">View All</p>
