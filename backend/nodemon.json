@@ -2,5 +2,7 @@
   "watch": ["."],
   "ext": "ts,json",
   "ignore": ["node_modules"],
-  "exec": "tsx  index.ts"
+  "exec": "tsx --watch index.ts",
+  "legacyWatch": true,
+  "delay": "2500"
 }

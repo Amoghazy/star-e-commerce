@@ -55,7 +55,10 @@ export default function Dashboard() {
   const percentage =
     salesYesterdayTotal > 0
       ? ((salesTodayTotal - salesYesterdayTotal) / salesYesterdayTotal) * 100
+      : salesYesterdayTotal === 0 && salesTodayTotal > 0
+      ? 100 // You can choose a different value to represent the percentage increase from zero
       : 0;
+
   const [state, setState] = useState({
     options: {
       chart: {
@@ -157,7 +160,7 @@ export default function Dashboard() {
           {
             name: "series-1",
             data: totalSalesDated?.data
-              ?.map((item: any) => item.totalSales)
+              ?.map((item: any) => item.totalSales.toFixed(2))
               .slice(0, 10),
           },
         ],

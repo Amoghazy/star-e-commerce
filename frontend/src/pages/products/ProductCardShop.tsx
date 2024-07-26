@@ -41,6 +41,7 @@ export default function ProductCardShop({ product }: { product: IProduct }) {
       })
     );
   };
+
   return (
     <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white  bg-clip-border text-gray-700 shadow-lg">
       <div className="relative flex justify-center mx-4 mt-4 overflow-hidden text-white border shadow-lg rounded-xl bg-clip-border shadow-[#e0e0e0]">
@@ -95,6 +96,12 @@ export default function ProductCardShop({ product }: { product: IProduct }) {
           {product.description}
         </p>
       </div>
+      {product?.countInStock == 0 && (
+        <p className="ml-5 mr-auto font-sans text-lg text-red-500 text-balance">
+          {" "}
+          out of stock
+        </p>
+      )}
       <div className="flex justify-between w-full p-6 pt-3">
         <button
           onClick={() => navigate(`/product/${product._id}`)}
@@ -104,8 +111,11 @@ export default function ProductCardShop({ product }: { product: IProduct }) {
           Read More <HiOutlineArrowLongRight size={20} />
         </button>
         <button
+          disabled={product?.countInStock == 0}
           onClick={handleAddToCart}
-          className=" transition-all   hover:shadow-gray-900/20 focus:opacity-[0.85] active:opacity-[0.85]   hover:scale-105  focus:scale-105  active:scale-100"
+          className={` transition-all   hover:shadow-gray-900/20 focus:opacity-[0.85] active:opacity-[0.85]   hover:scale-105  focus:scale-105  active:scale-100 ${
+            product?.countInStock == 0 ? "cursor-not-allowed text-gray-500" : ""
+          }`}
           type="button"
         >
           <GiShoppingCart size={35} />

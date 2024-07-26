@@ -46,7 +46,7 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
     message: err.message || "Internal Server Error",
   });
 });
-
+console.log("server is try to connect...");
 connectDB().then(() => {
   app.listen(process.env.PORT, () => {
     console.log(`server is running on port ${process.env.PORT}`);

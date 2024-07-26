@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useDispatch, useSelector } from "react-redux";
 import { useGetAllCategoriesQuery } from "../../redux/api/categoryApiSlice";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { GoArrowDown } from "react-icons/go";
 import {
@@ -62,6 +62,12 @@ export default function ShopFilter() {
       (checkbox as HTMLInputElement).checked = false;
     });
   };
+  useEffect(() => {
+    return () => {
+      handelReset();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>

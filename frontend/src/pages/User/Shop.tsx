@@ -43,6 +43,9 @@ export default function Shop() {
       dispatch(setAllBrands(Array.from(brands)));
     }
   }, [filtretedProducts, dispatch]);
+  useEffect(() => {
+    setCurrentpage(1);
+  }, [checkedCategory, checkedBrand, price]);
 
   const skip = (cuurentPage - 1) * 9;
   const limit = 9 + skip;

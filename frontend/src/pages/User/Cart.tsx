@@ -23,7 +23,7 @@ export default function Cart() {
             <div className="mt-8">
               <ul className="space-y-4">
                 {cart?.cartItems?.map((item: IProduct) => (
-                  <li className="flex items-center gap-4">
+                  <li key={item._id} className="flex items-center gap-4">
                     <img
                       src={item?.image}
                       alt=""

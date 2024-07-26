@@ -8,4 +8,4 @@ RUN npm i
 
 COPY . .
 RUN npm i -g nodemon
-ENTRYPOINT [ "npm" , "run" , "dev" ]
+CMD ["nodemon", "--config", "/app/nodemon.json"]

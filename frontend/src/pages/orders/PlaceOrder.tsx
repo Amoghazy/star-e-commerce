@@ -14,6 +14,7 @@ export default function PlaceOrder() {
   const { shippingAddress, paymentMethod: paymentMethodCart, cartItems } = cart;
 
   const [creatOrder] = useCreateOrderMutation();
+console.log(+cart?.totalPrice)
   const placeOrderHandler = async (e: Event) => {
     e.preventDefault();
     try {
@@ -24,12 +25,13 @@ export default function PlaceOrder() {
         itemsPrice: cart.itemsPrice,
         shippingPrice: cart.shippingPrice,
         taxPrice: cart.taxPrice,
-        totalPrice: cart.totalPrice,
+        totalPrice: +cart?.totalPrice,
       }).unwrap();
       toast.success("Order created successfully");
       dispatch(clearCart());
       navigate(`/order/${data._id}`);
     } catch (error) {
+      console.log("error", error);
       console.log(error);
       toast.error("Something went wrong");
     }
@@ -64,7 +66,7 @@ export default function PlaceOrder() {
 
             <tbody className="divide-y divide-gray-200">
               {cartItems.map((item: IProduct, index: number) => (
-                <tr className="text-center">
+                <tr key={index} className="text-center">
                   <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap">
                     {index + 1}
                   </td>

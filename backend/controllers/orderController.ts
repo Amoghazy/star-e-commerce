@@ -75,7 +75,7 @@ const createOrder = asyncHandler(async (req: any, res: Response) => {
     shippingAddress,
     paymentMethod,
     user: user._id,
-    totalPrice,
+    totalPrice: totalPrice.toFixed(2),
     itemsPrice: totalPriceItems,
     shippingPrice,
     taxPrice,
@@ -150,8 +150,8 @@ const getTotalSalesDated = asyncHandler(async (req: any, res: Response) => {
     },
     {
       $group: {
-        _id: { $dateToString: { format: "%d-%m-%Y", date: "$paidAt" } }
-,        totalSales: { $sum: "$itemsPrice" },
+        _id: { $dateToString: { format: "%d-%m-%Y", date: "$paidAt" } },
+        totalSales: { $sum: "$itemsPrice" },
       },
     },
   ]);

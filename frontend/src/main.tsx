@@ -9,7 +9,7 @@ import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <>
     <Provider store={store}>
-      <PayPalScriptProvider options={{ clientId: "test" }}>
+      <PayPalScriptProvider options={{ clientId: "test1" }}>
         <ToastContainer />
         <App />
       </PayPalScriptProvider>

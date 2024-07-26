@@ -148,7 +148,7 @@ export default function Order() {
                   ${item.price}
                 </td>
                 <td className="px-4 py-2 text-gray-700 whitespace-nowrap">
-                  ${+item.qty * +item.price}
+                  ${(+item.qty * +item.price).toFixed(2)}
                 </td>
               </tr>
             ))}
@@ -157,7 +157,7 @@ export default function Order() {
                 Total
               </td>
               <td className="px-4 py-2 text-center text-gray-700 whitespace-nowrap">
-                ${orderData?.data?.totalPrice}
+                ${orderData?.data?.totalPrice?.toFixed(2)}
               </td>
             </tr>
           </tbody>
@@ -223,7 +223,9 @@ export default function Order() {
           <Divider cls="pr-6 mb-2" />
           <div className="flex justify-between p-4 pt-0 pb-1">
             <p className="text-sm">Total</p>
-            <p className="text-sm">${orderData?.data?.totalPrice}</p>
+            <p className="text-sm">
+              ${orderData?.data?.totalPrice?.toFixed(2)}
+            </p>
           </div>
         </div>
         {!orderData?.data?.isPaid && (

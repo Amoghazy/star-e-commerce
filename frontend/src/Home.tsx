@@ -18,17 +18,19 @@ export default function Home() {
           <p className="p-2 rounded-md bg-primary md:rounded-full">View All</p>
         </div>
         <div className="grid grid-cols-1 gap-2 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2">
-          {topProducts?.data?.slice(0, 10).map((product: IProduct) => (
-            <>
-              {" "}
-              <div
-                key={product._id}
-                className="w-[20rem]  mx-auto   p-3  backdrop-blur-md"
-              >
-                <Product product={product} />
-              </div>
-            </>
-          ))}
+          {topProducts?.data
+            ?.slice(0, 10)
+            .map((product: IProduct, index: number) => (
+              <>
+                {" "}
+                <div
+                  key={product._id + index}
+                  className="w-[20rem]  mx-auto   p-3  backdrop-blur-md"
+                >
+                  <Product product={product} />
+                </div>
+              </>
+            ))}
         </div>
       </div>
     </section>
